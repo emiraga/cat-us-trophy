@@ -1,0 +1,288 @@
+snippet maxflow
+	#define MM 1211
+	VI edges[MM];
+	int visited[MM];
+	int cap[MM][MM];
+	int dfs(int src, int end, int fl)
+	{
+		if(visited[src])return 0;
+		if(src==end)return fl;
+		visited[src]=1;
+		Foreach(v,edges[src])
+		{
+			int x = min( fl, cap[src][*v] );
+			if(x>0)
+			{
+				x = dfs(*v,end,x);
+				if(x==0)continue;
+				cap[src][*v] -= x;
+				cap[*v][src] += x;
+				return x;
+			}
+		}
+		return 0;
+	}
+
+	int flow(int src, int sink)
+	{
+		int ret = 0;
+		while(1)
+		{
+			SET(visited,0);
+			int d = dfs(src,sink,INT_MAX);
+			if(d==0)break;
+			ret += d;
+		}
+		return ret;
+	}
+	void addEdge(int from, int to, int value)
+	{
+		cap[ from ][to]=value;
+		edges[from].pb(to);
+		edges[to].pb(from);
+	}
+
+snippet maxflowLIST
+	#define NN 100010
+	int visited[NN];
+	int head[NN];
+
+	struct edge { int point, next; int flow, capa; };
+	edge edges[ 500000 ];
+	int src, dest, numedges;
+
+	int dfs(int src, int fl)
+	{
+		if(visited[src])return 0;
+		if(src==dest)return fl;
+		visited[src]=1;
+		for(int i=head[src];i>=0;i=edges[i].next)
+		{
+			int v = edges[i].point;
+			int x = min( fl, edges[i].capa - edges[i].flow );
+			if(x>0)
+			{
+				x = dfs(v,x);
+				if(x==0)continue;
+				edges[i].flow+=x;
+				edges[i^1].flow-=x;
+				return x;
+			}
+		}
+		return 0;
+	}
+
+	int flow()
+	{
+		int ret = 0;
+		while(1)
+		{
+			SET(visited,0);
+			for(int i=0;;i++)
+			{
+				int d = dfs(src,INT_MAX);
+				if(d==0) { if(i==0) return ret; break; }
+				ret += d;
+			}
+		}
+	}
+
+	void addEdge(int u,int v, int c1=1, int c2=0) 
+	{
+		edges[numedges] = (edge) { v,head[u],0,c1 } ; head[u] = numedges++;
+		edges[numedges] = (edge) { u,head[v],0,c2 } ; head[v] = numedges++;
+	}
+
+	void flowinit(int _node,int _src,int _dest)
+	{
+		//node=_node;
+		src=_src;
+		dest=_dest;
+		SET(head,-1);
+		numedges = 0;
+	}
+
+snippet maxflow_dinic
+	#include<limits>
+
+	#define NN 5010
+	const long long INF = numeric_limits<long long>::max();
+
+	struct edge { int point, next; LL flow, capa; };
+	vector<edge> edges;
+
+	int head[NN], dist[NN], Q[NN], work[NN]; 
+	int node, src, dest; 
+
+	void flowinit(int _node,int _src,int _dest)
+	{
+		node=_node;
+		src=_src;
+		dest=_dest;
+		SET(head,-1);
+		edges.clear();
+		edges.reserve( 60010 );
+	}
+
+	bool dinic_bfs()
+	{
+		SET(dist,-1); dist[src]=0;
+		int sizeQ=0;
+		Q[sizeQ++]=src;
+		for (int cl=0;cl<sizeQ;cl++)
+			for (int k=Q[cl],i=head[k];i>=0;i=edges[i].next)
+				if (edges[i].flow<edges[i].capa && dist[edges[i].point]<0)
+					dist[edges[i].point]=dist[k]+1, Q[sizeQ++]=edges[i].point;
+		return dist[dest]>=0;
+	}
+
+	LL dinic_dfs(int x, LL exp)
+	{
+		if (x==dest) return exp;
+		for (int &i=work[x];i>=0;i=edges[i].next)
+		{
+			int v=edges[i].point;
+			LL tmp;
+			if (edges[i].flow<edges[i].capa && dist[v]==dist[x]+1
+					&& (tmp=dinic_dfs(v,min(exp,edges[i].capa-edges[i].flow)))>0)
+				return edges[i].flow+=tmp,edges[i^1].flow-=tmp, tmp;
+		}
+		return 0;
+	}
+
+	LL dinic_flow()
+	{
+		LL result=0;
+		while (dinic_bfs())
+		{
+			Rep(i,node) work[i]=head[i];
+			for(LL delta; delta=dinic_dfs(src,INF); result+=delta);
+		}
+		return result;
+	}
+
+	void addEdge(int u,int v, LL c1=1, LL c2=0) 
+	{
+	//	cout << "add edge " << u+1 << " to " << v+1 << endl;
+		edges.pb( (edge) { v,head[u],0,c1 } ); head[u] = edges.sz-1;
+		edges.pb( (edge) { u,head[v],0,c2 } ); head[v] = edges.sz-1;
+	}
+
+
+snippet flow_smilitude
+	#define M 750
+	int nr, nc, o = 355, source = 740, sink = 741;
+	vector<int> edge[M]; 
+	int cap[M][M];
+	bool vis[M];
+
+	void add( int a, int b, int c, int d ) {
+		edge[a].pb(b), edge[b].pb(a);
+		cap[a][b] = c, cap[b][a] = d;
+	}
+	
+	int dfs( int src, int snk, int fl ) {
+		if( vis[src] ) return 0;
+		if( snk == src ) return fl;
+		vis[src] = 1;
+
+		REP(i,edge[src].sz) {
+			int v = edge[src][i];
+			int x = min( fl, cap[src][v] );
+			if( x > 0 ) {
+				x = dfs( v, snk, x );
+				if( !x ) continue;
+				cap[src][v] -= x;
+				cap[v][src] += x;
+				return x;
+			}
+		}
+		return 0;
+	}
+
+	int flow( int src, int snk ) {
+		int ret = 0;
+		while( 1 ) {
+			SET( vis, 0 );
+			int delta = dfs( src, snk, 1<<30 );
+			if( !delta ) break;
+			ret += delta;
+		}
+		return ret;
+	}
+
+snippet mincost_maxflow
+	#define N 705
+	int n, nE;
+	int d[N], pre[N];
+
+	struct edge {
+		int to, cost, cap;
+		int back;
+	};
+
+	edge E[N*N];
+	vector< int > e[N];
+
+	int mincost( int s, int t, int lim ) {
+
+		int flow = 0, ret = 0;
+		while( flow < lim ) {
+			
+			SET( d, -1 ); SET( pre, -1 );
+			d[s] = 0;
+			
+			// bellman ford
+			int jump = n-1;
+			bool done = 0;
+			while( !done && --jump >= 0) {	
+				done = 1;
+				REP(i,n) if( d[i] != -1 ) REP(j,e[i].sz) {
+					edge& x = E[ e[i][j] ];
+					int v = x.to;
+					if( x.cap > 0 && ( d[v] == -1 || d[v] > d[i] + x.cost )) {
+						d[v] = d[i] + x.cost;
+						pre[v] = x.back;
+						done = 0;
+	//					cout<<v<<" "<<d[v]<<endl;
+					}
+				}
+				if( done ) break;
+			}
+		
+			if( d[t] == -1 ) break;
+
+			// traverse back
+			int x = t, cflow = 1<<30;
+			while( x != s ) {
+				edge& ed = E[ pre[x] ];
+				cflow = min( cflow, E[ ed.back ].cap );
+				x = ed.to;
+			}
+		
+			if( !cflow ) break;
+			int take = min( lim - flow, cflow );
+			ret += d[t] * take;
+			flow += take;
+			
+			x = t;
+			while( x != s ) {
+				edge& back = E[ pre[x] ];
+				edge& forw = E[ back.back ];
+				back.cap += take;
+				forw.cap -= take;
+				x = back.to;
+			}
+		}
+		
+		if( flow < lim ) return -1;
+		return ret;
+	}
+	// remember to add -cost in the opposite direction
+	void add( int u, int v, int uv, int vu, int fuv, int fvu ) {
+		int a = nE, b = nE+1;
+		nE += 2;
+		E[ a ].to = v, E[ a ].cost = uv, E[ a ].cap = fuv, E[ a ].back = b;
+		E[ b ].to = u, E[ b ].cost = vu, E[ b ].cap = fvu, E[ b ].back = a;
+		e[ u ].pb( a ), e[ v ].pb( b );
+	}

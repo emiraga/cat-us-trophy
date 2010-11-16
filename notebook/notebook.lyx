@@ -1,0 +1,329 @@
+#LyX 1.6.7 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+
+\usepackage[cm]{fullpage}\usepackage{amsfonts}\usepackage{comment}\usepackage{fancyvrb}\usepackage{fancyhdr}\@ifundefined{definecolor}
+ {\usepackage{color}}{}
+\usepackage{cmap}
+
+\let\le=\leqslant
+\let\ge=\geqslant
+
+
+\pagenumbering{arabic}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[R]{\small\textsf{\textbf{\thepage}}{}}
+\fancyfoot{}
+
+\newcommand{\Section}[1]{
+  \section*{#1}
+  \addcontentsline{toc}{subsection}{#1}
+  \vspace{-3mm}
+}
+
+\newcommand{\Topic}[1]{\textbf{#1}}
+\end_preamble
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_amsmath 2
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth -1
+\tocdepth 5
+\paragraph_separation skip
+\defskip 3mm
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\family sans
+\series bold
+\size larger
+\begin_inset space \hfill{}
+\end_inset
+
+IIUM cat-us-trophy
+\begin_inset space \hfill{}
+\end_inset
+
+
+\family default
+\series default
+\size default
+
+\begin_inset Graphics
+	filename 42-15487743.jpg
+	lyxscale 30
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+parskip}{0mm}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+parskip}{3mm}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Sums
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features>
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sum_{k=0}^{n}k=n(n+1)/2$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sum_{k=a}^{b}k=(a+b)(b-a+1)/2$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sum_{k=0}^{n}k^{2}=n(n+1)(2n+1)/6$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sum_{k=0}^{n}k^{3}=n^{2}(n+1)^{2}/4$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sum_{k=0}^{n}k^{4}=(6n^{5}+15n^{4}+10n^{3}-n)/30$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sum_{k=0}^{n}k^{5}=(2n^{6}+6n^{5}+5n^{4}-n^{2})/12$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sum_{k=0}^{n}x^{k}=(x^{n+1}-1)/(x-1)$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sum_{k=0}^{n}kx^{k}=(x-(n+1)x^{n+1}+nx^{n+2})/(x-1)^{2}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1+x+x^{2}+\dots=1/(1-x)$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

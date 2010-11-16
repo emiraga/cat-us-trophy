@@ -1,0 +1,229 @@
+snippet genprimes
+	#define MAXP 1000000
+	bool primes[MAXP];
+	vector<int> plist;
+
+	void genprimes() 
+	{
+		plist.clear();
+		int m = (int)sqrt(int(MAXP));
+		primes[0]=primes[1]=0;
+		for(int i=2;i<MAXP;i++) primes[i] = 1;
+		for(int i=2;i<=m;i++)
+			if (primes[i])
+				for(int j=i*i;j<MAXP;j+=i) primes[j] = 0;
+		for(int i=2;i<MAXP;i++)if(primes[i])plist.push_back(i);
+	}
+
+snippet choose
+	LL choose;
+	For(i,1,50)
+	{
+		choose[i][0]=choose[i][i]=1;
+		For(j,1,i)
+		{
+			choose[i][j] = choose[i-1][j]+choose[i-1][j-1];
+		}
+	}
+
+snippet ncr
+	// ncr calculating
+	SET( ncr, 0 );
+	ncr[0][0] = 1;
+	FOR(i,1,n) {
+		ncr[i][0] = 1;
+		FOR(j,1,n) ncr[i][j] = ncr[i-1][j] + ncr[i-1][j-1];
+	}
+
+snippet euclidExtended
+	template<class T> inline T euclid(T a,T b,T &X,T &Y)
+	{
+		if(a<0)	{ T d=euclid(-a,b,X,Y); X=-X; return d;	}
+		if(b<0) { T d=euclid(a,-b,X,Y); Y=-Y; return d; }
+		if(b==0) { X=1; Y=0; return a; }
+		else{
+			T d=euclid(b,a%b,X,Y); T t=X;
+			X=Y; Y=t-(a/b)*Y;
+			return d;
+		}
+	}
+
+snippet isprime2MillerRabin
+	bool isprime2(long long p, int iteration){
+	    if(p<2)
+	        return false;
+	    if(p!=2 && p%2==0)
+	        return false;
+	    long long s=p-1;
+	    while(s%2==0)
+	        s/=2;
+	    for(int i=0;i<iteration;i++){
+	        long long a=rand()%(p-1)+1,temp=s;
+	        long long mod=powermod(a,temp,p);
+	        while(temp!=p-1 && mod!=1 && mod!=p-1){
+	            mod=multiplymod(mod,mod,p);
+	            temp *= 2;
+	        }
+	        if(mod!=p-1 && temp%2==0)
+	            return false;
+	    }
+	    return true;
+	}
+
+snippet factorize
+	template<class T> inline vector<pair<T,int> > factorize(T n)
+	{
+		vector<pair<T,int> > R;
+		for (T i=2;n>1;)
+		{
+			if (n%i==0)
+			{
+				int C=0;
+				for (;n%i==0;C++,n/=i);
+				R.push_back(make_pair(i,C));
+			}
+			i++;
+			if (i>n/i) i=n;
+		}
+		if (n>1)
+			R.push_back(make_pair(n,1));
+		return R;
+	}
+
+snippet eulerPhi
+	template<class T> T euler(T n) 
+	{ 
+		T result = n; 
+		for(int i=2;i*i <= n;i++) { 
+			if (n % i == 0) result -= result / i; 
+			while (n % i == 0) n /= i; 
+		}
+		if (n > 1) result -= result / n; 
+		return result; 
+	}
+
+snippet euler2Phi
+	template<class T> inline T euler2(T n) 
+	{
+		vector<pair<T,int> > R=factorize(n);
+		T r=n;
+		for (int i=0;i<R.size();i++)
+			r=r/R[i].first*(R[i].first-1);
+		return r;
+	}
+
+snippet s_gcd_congr_modinv
+	LL gcd( LL a, LL b ) {
+		return !b ? a : gcd( b, a%b );
+	}
+	PII egcd( LL a, LL b ) {  // returns x,y | ax + by = gcd(a,b)
+		if( b == 0 ) return mp( 1, 0 );
+		else {
+			PII d = egcd( b, a % b );
+			return mp( d.y, d.x - d.y * ( a / b ) );
+		}
+	}
+	LL congruence( int a, int b, int n ) { // finds ax = b(mod n) 
+		int d = gcd( a, n );
+		if( b % d != 0 ) return 1<<30; // no solution
+		PII ans = egcd( a, n );
+		LL ret = ans.x * ( b/d + 0LL ), mul = n/d;
+		ret %= mul;
+		if( ret < 0 ) ret += mul;
+		return ret;
+	}
+	LL m_inverse( LL num, LL mod ) {
+		PII p = egcd( num, mod );
+		int ret = p.x % mod;
+		if( ret < 0 ) ret += mod;
+		return ret;
+	}
+
+snippet sterling_1
+	LL S[110][110];
+	LL fact[110];
+	fact[0] = 1;
+	For(i,1,110)
+		fact[i] = (fact[i-1] * i) % M;
+
+	SET(S,0);
+	For(n,1,110)
+	{
+		S[n][n] = 1;
+
+		S[n][1] = fact[n-1];
+		if(n%2 == 0) S[n][1] *= -1;
+
+		For(k,2,n)
+		{
+			S[n][k] = ( - (n-1)*S[n-1][k] + S[n-1][k-1] )%M;
+		}
+	}
+	if(K==0)
+		cout << (N==0) << endl;
+	else
+		cout << iabs(S[N][K]%M) << endl;
+
+snippet sterling_2
+	LL S[110][110];
+	LL fact[110];
+	fact[0] = 1;
+	For(i,1,110)
+		fact[i] = (fact[i-1] * i) % M;
+
+	SET(S,0);
+	For(n,1,110)
+	{
+		S[n][n] = 1;
+		S[n][1] = 1;
+
+		For(k,2,n)
+		{
+			S[n][k] = ( (k)*S[n-1][k] + S[n-1][k-1] )%M;
+		}
+	}
+	if(K==0)
+		cout << (N==0) << endl;
+	else
+		cout << iabs(S[N][K]%M) << endl;
+
+snippet modpow
+	Bignum modpow(Bignum base, Bignum exponent, Bignum modulus) {
+	   Bignum result = 1;
+	   while (exponent > 0) {
+		 if ((exponent & 1) == 1) {
+			// multiply in this bit's contribution while using modulus to keep result small
+			result = (result * base) % modulus;
+		 }
+		 // move to the next bit of the exponent, square (and mod) the base accordingly
+		 exponent >>= 1;
+		 base = (base * base) % modulus;
+	  }
+	  return result;
+	}
+
+snippet totient
+	FOR(i,1,M) f[i] = i;
+	FOR(n,2,M) if( f[n] == n ) for(int k=n; k<=M; k+=n) f[k] *= n-1, f[k] /= n;
+
+snippet sieve_bits
+	const int MAX = 100000000;
+	int p[ MAX/64 + 2 ];
+	int np = 0;
+
+	#define on(x) ( p[x/64] & (1<<( (x%64)/2 ) ) )
+	#define turn(x)  p[x/64] |= (1<<( (x%64)/2 ) )
+
+	void sieve() {
+		for(int i=3;i*i<MAX; i+=2) 	{
+			if( !on(i) ) {
+				int ii = i*i;
+				int i2 = i+i;
+				for(int j=ii; j<MAX; j+=i2) turn(j);
+			}
+		}
+	}
+
+	inline bool prime( int num ) {
+		return num > 1 && ( num == 2 || ( (num&1) && !on( num ) ) ); 
+	}

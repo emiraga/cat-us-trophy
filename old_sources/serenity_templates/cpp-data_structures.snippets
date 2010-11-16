@@ -1,0 +1,145 @@
+snippet unionfind
+	struct UnionFind
+	{
+		int c;
+		vector<int> parent, rank;
+		UnionFind(int n) : c(n), parent(n), rank(n)
+		{ for(int i = 0; i < n; ++i)	parent[i] = i, rank[i] = 0; }
+		int root(int x) { if(parent[x] != x) parent[x] = root(parent[x]); return parent[x]; }
+		bool join(int a, int b)
+		{
+			a = root(a); b = root(b);
+			if(a == b) return false;
+			if(rank[a] > rank[b])
+				parent[b] = a;
+			else
+			{
+				parent[a] = b;
+				if(rank[a] == rank[b]) rank[b]++;
+			}
+			--c;
+			return true;
+		 }
+	};
+
+snippet fraction
+	template<class T> struct Fraction{ public: T a,b;
+		Fraction(T a=0,T b=1){T d=gcd(a,b);a/=d;b/=d;if (b<0) a=-a,b=-b;this->a=a;this->b=b;}
+	   string toString();
+	};
+	template<class T> string Fraction<T>::toString(){ostringstream sout;sout<<a<<"/"<<b;return sout.str();}
+	template<class T> Fraction<T> operator+(const Fraction<T> &p,const Fraction<T> &q){return Fraction<T>(p.a*q.b+q.a*p.b,p.b*q.b);}
+	template<class T> Fraction<T> operator-(const Fraction<T> &p,const Fraction<T> &q){return Fraction<T>(p.a*q.b-q.a*p.b,p.b*q.b);}
+	template<class T> Fraction<T> operator*(const Fraction<T> &p,const Fraction<T> &q){return Fraction<T>(p.a*q.a,p.b*q.b);}
+	template<class T> Fraction<T> operator/(const Fraction<T> &p,const Fraction<T> &q){return Fraction<T>(p.a*q.b,p.b*q.a);}
+
+snippet getid
+	map<string,int> mapid;
+	int getid(string X) { return present(mapid,X)?mapid[X]:mapid[X]=mapid.size()-1; }
+
+snippet matrix
+	const int MaxMatrixSize=40;
+	//showMatrix
+	//template<class T> inline void showMatrix(int n,T A[MaxMatrixSize][MaxMatrixSize]){for (int i=0;i<n;i++){for (int j=0;j<n;j++)cout<<A[i][j];cout<<endl;}}
+	//identityMatrix
+	//template<class T> inline void identityMatrix(int n,T A[MaxMatrixSize][MaxMatrixSize]){for (int i=0;i<n;i++) for (int j=0;j<n;j++) A[i][j]=(i==j)?1:0;}
+	//addMatrix
+	//template<class T> inline void addMatrix(int n,T C[MaxMatrixSize][MaxMatrixSize],T A[MaxMatrixSize][MaxMatrixSize],T B[MaxMatrixSize][MaxMatrixSize]){for (int i=0;i<n;i++) for (int j=0;j<n;j++) C[i][j]=A[i][j]+B[i][j];}
+	//subMatrix
+	//template<class T> inline void subMatrix(int n,T C[MaxMatrixSize][MaxMatrixSize],T A[MaxMatrixSize][MaxMatrixSize],T B[MaxMatrixSize][MaxMatrixSize]){for (int i=0;i<n;i++) for (int j=0;j<n;j++) C[i][j]=A[i][j]-B[i][j];}
+	//mulMatrix
+	//template<class T> inline void mulMatrix(int n,T C[MaxMatrixSize][MaxMatrixSize],T inputA[MaxMatrixSize][MaxMatrixSize],T inputB[MaxMatrixSize][MaxMatrixSize]){ T A[MaxMatrixSize][MaxMatrixSize],B[MaxMatrixSize][MaxMatrixSize];for (int i=0;i<n;i++) for (int j=0;j<n;j++) A[i][j]=inputA[i][j],B[i][j]=inputB[i][j],C[i][j]=0;for (int i=0;i<n;i++) for (int j=0;j<n;j++) for (int k=0;k<n;k++) C[i][j]+=A[i][k]*B[k][j];}
+	//addModMatrix
+	//template<class T> inline void addModMatrix(int n,T m,T C[MaxMatrixSize][MaxMatrixSize],T A[MaxMatrixSize][MaxMatrixSize],T B[MaxMatrixSize][MaxMatrixSize]){for (int i=0;i<n;i++) for (int j=0;j<n;j++) C[i][j]=checkMod(A[i][j]+B[i][j],m);}
+	//subModMatrix
+	//template<class T> inline void subModMatrix(int n,T m,T C[MaxMatrixSize][MaxMatrixSize],T A[MaxMatrixSize][MaxMatrixSize],T B[MaxMatrixSize][MaxMatrixSize]){for (int i=0;i<n;i++) for (int j=0;j<n;j++) C[i][j]=checkMod(A[i][j]-B[i][j],m);}
+	//mulModMatrix
+	//template<class T> inline void mulModMatrix(int n,T m,T C[MaxMatrixSize][MaxMatrixSize],T inputA[MaxMatrixSize][MaxMatrixSize],T inputB[MaxMatrixSize][MaxMatrixSize]){ T A[MaxMatrixSize][MaxMatrixSize],B[MaxMatrixSize][MaxMatrixSize];for (int i=0;i<n;i++) for (int j=0;j<n;j++) A[i][j]=inputA[i][j],B[i][j]=inputB[i][j],C[i][j]=0;for (int i=0;i<n;i++) for (int j=0;j<n;j++) for (int k=0;k<n;k++) C[i][j]=(C[i][j]+multiplyMod(A[i][k],B[k][j],m))%m;}
+
+snippet pairPLL_matrixMult
+	void Dm(pair<PLL,PLL> m) { cerr << m.x.x << " " << m.x.y<< " " << m.y.x << " " << m.y.y << endl; }
+	pair<PLL,PLL> mult( pair<PLL,PLL> a, pair<PLL,PLL> b)
+	{
+		return mp ( mp( (a.x.x * b.x.x + a.x.y * b.y.x)%MOD , (a.x.x * b.x.y + a.x.y * b.y.y)%MOD ),
+				    mp ( (a.y.x * b.x.x + a.y.y * b.y.x)%MOD , (a.y.x * b.x.y + a.y.y * b.y.y)%MOD   ) );
+	}
+
+snippet segmentTree
+	const int N = 5000;
+	int A[N];
+	inline bool comp(int pos1, int pos2)
+	{
+		return A[pos1] < A[pos2];
+	}
+
+	int H[4*N];
+	void initialize(int n, int i, int j)
+	{
+		if(i == j) { H[n] = i; return; }
+		initialize(2*n,i,(i+j)/2);
+		initialize(2*n+1,(i+j)/2+1, j);
+		H[n]=comp( H[2*n] , H[2*n+1] )?H[2*n]:H[2*n+1];
+	}
+
+	int query(int n, int i,int j, int a, int b)
+	{
+		if(a<=i && j<=b) return H[n];
+		const int mid = (i+j)/2;
+		int p1=(a>mid)?-1:query(2*n,i,mid,a,b);
+		int p2=(mid>=b)?-1:query(2*n+1,mid+1,j ,a,b);
+		if(p1==-1)return p2;
+		if(p2==-1)return p1;
+		return comp(p1,p2)?p1:p2;
+	}
+
+	void update(int n, int i, int j, int pos, int v)
+	{
+		const int mid = (i+j)/2;
+		if(pos<=mid && i<mid) update(2*n,i,mid,pos,v);
+		if(pos>mid && mid+1<j) update(2*n+1,mid+1,j,pos,v);
+		H[n]=comp( H[2*n],H[2*n+1] )?H[2*n]:H[2*n+1];
+	}
+
+snippet BIT
+	int bit[M],n,m;
+	void update(int x, int v) {
+		while( x <= n ) {
+			bit[x] += v;
+			x += x & -x;
+		}
+	}
+
+	int sum( int x ) {
+		int ret = 0;
+		while( x > 0 ){ 
+			ret += bit[x];
+			x -= x & -x;
+		}
+		return ret;
+	}
+
+snippet BIT_2D
+	int bit[M][M];
+	int n;
+
+	int sum( int x, int y ){
+		int ret = 0;
+		while( x > 0 ){
+			int yy = y; 
+				while( yy > 0 ) ret += bit[x][yy], yy -= yy & -yy;
+			x -= x & -x ;
+		}
+		return ret ;
+	}
+
+	void update(int x , int y , int val){
+		int y1;
+		while (x <= n){
+			y1 = y;
+			while (y1 <= n){
+				bit[x][y1] += val;
+				y1 += (y1 & -y1); 
+			}
+			x += (x & -x); 
+		}
+	}

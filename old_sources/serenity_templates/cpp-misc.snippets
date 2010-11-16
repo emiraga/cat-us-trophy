@@ -1,0 +1,363 @@
+snippet move4
+	//N E S W
+	int dr[] = {-1, 0, 1, 0};
+	int dc[] = { 0, 1, 0,-1};
+
+snippet move8
+	//N NE E SE S SW W NW
+	int dr[] = {-1, -1, 0, 1, 1, 1, 0, -1};
+	int dc[] = { 0,  1, 1, 1, 0,-1,-1, -1};
+
+snippet knightmove
+	int dr[] = {-1,-1,-2,-2, 1, 1, 2, 2};
+	int dc[] = {-2, 2,-1, 1,-2, 2,-1, 1};
+
+snippet monthnames
+	string months[] = {"January","February","March","April","May","June","July","August","September","October","November","December"};
+
+snippet daysofweek
+	string daysOfWeek[] = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+
+snippet daysinmonth
+	int daysInMonth[] = {31,28,31,30,31,30,31,31,30,31,30,31};
+
+snippet details
+	/*
+	TASK:  
+	ALGO:
+	LANG: C++
+	USER: eemirha1
+	DATE: 	
+	*/
+
+snippet equal
+	const double eps = 1e-11;
+	template<class T> bool equal(T a, T b)
+	{
+		return fabs(a-b) < eps || fabs(a-b) < eps * max(fabs(a),fabs(b));
+	}
+
+snippet bigNumInt
+	const int B = 10;// If you change this value, then you 
+	                 // will also have to change operator<<.
+	                 // Higher value might produce overflow
+	                 // change to vector<short> to fix that.
+	class num : public vector<char>
+	{public:
+		num(){}
+		num(int n)
+	    {
+	        for(;n;n/=B) push_back(n%B);
+	    }
+		num(string n)
+		{
+			int down=0,sign=1;
+			if(n[down]=='-')
+			{
+				down++;
+				sign=-1;
+			}
+			for(int i=n.size()-1;i>=0;i--)
+				push_back(sign*(n[i]-'0'));
+			norm();
+		}	
+		void norm()
+		{
+			while(!empty()&&!back())
+	            pop_back();
+			int r = 0;
+			for(int i=0;i<size();i++)
+			{
+				at(i) += r;
+				r = at(i) / B;
+				at(i) %= B;
+			}
+			for(;r;r/=B) push_back(r);
+		}
+	};
+	ostream& operator<<(ostream &s, const num &a)
+	{
+		if(!a.size()) return s << '0';
+	    if(a.back()<0)s << '-';
+		for(int i = a.size()-1;i>=0;i--)
+			s << char(iabs(a[i])+'0');
+		return s;
+	}
+	bool operator==(const num &a, const num &b)
+	{
+		if(a.size()!=b.size())return false;
+		for(int i=0;i<a.size();i++)
+			if(a[i]!=b[i])return false;
+		return true;
+	}
+	bool operator!=(const num &a, const num &b)
+	{
+	    return !(a==b);
+	}
+	bool operator<(const num &a, const num &b)
+	{
+	    if(!a.size() && !b.size())return false;
+	    if(!a.size()) return 0 < b.back();
+	    if(!b.size()) return a.back() < 0;
+	    if(a.back()*b.back()<0)return a.back()<0;
+		if(a.size()!=b.size())return (a.size()<b.size())^(a.back()<0);
+		for(int i=a.size()-1;i>=0;i--)
+			if(a[i]!=b[i])return a[i]<b[i];
+		return false;
+	}
+	bool operator<=(const num &a, const num &b)
+	{
+	/*    if(!a.size() && !b.size())return true;
+	    if(!a.size()) return 0 <= b.back();
+	    if(!b.size()) return a.back() <= 0;
+	    if(a.back()*b.back()<0)return a.back()<0;
+		if(a.size()!=b.size())return (a.size()<b.size())^(a.back()<0);
+		for(int i=a.size()-1;i>=0;i--)
+			if(a[i]!=b[i])return a[i]<=b[i];
+		return true;*/
+		return a < b || a == b; //inefficient?
+	}
+	num operator-(const num &a)
+	{
+	    num b(a);
+	    for(int i=0;i<b.size();i++) b[i]=-b[i];
+	    return b;
+	}
+	num operator-(const num &a, const num &b);
+	num operator+(const num &a, const num &b)
+	{
+	    if(!a.size())return b;
+	    if(!b.size())return a;
+	    if(a.back()*b.back()<0)return a -(-b);
+		num c(a);
+		int s = min(a.size(),b.size());
+		for(int i=0;i<s;i++)
+	        c[i]+=b[i];
+		while(s<b.size())
+	        c.push_back(b[s++]);
+		c.norm();
+		return c;
+	}
+	num operator-(const num &a, const num &b)
+	{
+	    if(!a.size())return -b;
+	    if(!b.size())return a;
+	    if(a.back()*b.back()<0)return a +(-b);
+	    num up=iabs(a),down=iabs(b);
+	    if(up<down)swap(up,down);
+	    for(int i=0;i<down.size();i++)
+	        up[i]-=down[i];
+	    for(int i=0;i<up.size();i++)
+	        for(;up[i]<0;up[i]+=B)
+	            up[i+1]--;
+		up.norm();
+		return (a<b)?-up:up;
+	}
+	num operator*(const num &a, const num &b)
+	{
+	    num c;
+	    c.resize(a.size()+b.size());
+	    fill(c.begin(),c.end(),0);
+	    for(int i=0;i<a.size();i++)
+	        for(int j=0;j<b.size();j++)
+			{
+	            int r = c[i+j] + int(a[i])*b[j];
+				c[i+j+1] += r/B;
+				c[i+j] = r%B;
+			}
+		c.norm();
+	    return c;
+	}
+	num divByInt(const num &a, int b)
+	{
+		num c(a);
+	    int r=0;
+		for(int i=c.size()-1;i>=0;i--)
+		{
+	        c[i] += r*B;
+	        r = c[i] % b;
+	        c[i] /= b;
+	    }
+		c.norm();
+		return c;
+	}
+	num operator/(const num &a, const num &b)
+	{
+	    if(a==0 || b==0) return 0;
+		num c;
+		c.resize(a.size());
+	    num row,bAbs=iabs(b),aAbs=iabs(a);
+		for(int i=a.size()-1;i>=0;i--)
+		{
+	        row.insert(row.begin(),1,aAbs[i]);
+			row.norm();
+	        for(c[i]=0;bAbs <= row;c[i]++)
+	            row = row - bAbs;
+	    }
+		c.norm();
+		return (a.back()*b.back()<0)?-c:c;
+	}
+	num operator%(const num &a, const num &b)
+	{
+	    if(a==0 || b==0) return 0;
+	    num row,bAbs=iabs(b),aAbs=iabs(a);
+		for(int i=a.size()-1;i>=0;i--)
+		{
+	        row.insert(row.begin(),1,aAbs[i]);
+			row.norm();
+	        while(bAbs <= row)
+	            row = row - bAbs;
+	    }
+	    return (a.back()<0)?-row:row;
+		//return a - (a/b)*b;//unefficient?
+	}
+	num power(const num &m, const num &n)
+	{
+		if(n.empty())return 1;
+		num a=power(m,n/2);
+		return (n[0]%2)?a*a*m:a*a;
+	}
+
+snippet infixToPostfix
+	bool opGreaterEqual(char a, char b)
+	{
+		if(a=='^' || b=='^') return a=='^';
+		if(a=='/' || b=='/') return a=='/'; if(a=='*' || b=='*') return a=='*';
+		if(a=='-' || b=='-') return a=='-'; if(a=='+' || b=='+') return a=='+';
+	}
+	string infixToPostfix(string s)
+	{
+		int len=s.length();
+		string ans="";
+		stack<char> stack;
+		
+		for(int i=0; i<len; i++)
+		{
+			if (s[i]=='+' || s[i]=='-' || s[i]=='*' || s[i]=='/' || s[i]=='^')
+			{
+				while( !stack.empty() && stack.top()!='(' )
+				{
+					if ( opGreaterEqual(stack.top(), s[i]) )
+					{
+						ans+=stack.top();;
+						stack.pop();
+					}
+					else break;
+				}
+				stack.push(s[i]);
+			}
+			else if ( s[i]=='(' )
+			{
+				stack.push('(');
+			}
+			else if ( s[i]==')' )
+			{
+				while ( !stack.empty() && stack.top()!='(' )
+				{
+					ans+=stack.top();;
+					stack.pop();
+				}
+				if ( !stack.empty() ) stack.pop();
+			}
+			else if ( s[i]>='a' && s[i]<='z' )
+				ans+=s[i];
+		}
+		while ( !stack.empty() )
+		{
+			ans+=stack.top();;
+			stack.pop();
+		}
+		return ans;
+	}
+
+snippet bsearchLE
+	int down = start;
+	int up = end+1;
+	while(down+1 < up)
+	{
+	    int mid = (down+up)/2;
+	    if(f1(mid)) down = mid; else up = mid;
+	}
+	assert(down == L);
+
+snippet bsearchGE
+	int down = start-1;
+	int up = end;
+	while(down+1 < up)
+	{
+	    int mid = (down+up)/2;
+	    if(f2(mid)) up = mid; else down = mid;
+	}
+	assert(down+1 == L);
+
+snippet perm_index
+	int perm_index (char pit[], int size)
+	{
+		int i;
+		register int j, ball;
+		int index = 0;
+		for (i = 1; i < size; i++)
+		{
+			ball = pit[i-1];
+			for (j = i; j < size; j++)
+			{
+				if (ball > pit[j])
+				index ++;
+			}
+			index *= size - i;
+		}
+		return index;
+	}
+
+snippet geodistance
+	double gdist
+	( double a_lat, double b_lat, double a_long, double b_long ) {
+		return acos( cos( a_lat ) * cos( b_lat ) * cos( a_long - b_long ) + sin( a_lat ) * sin( b_lat ));
+	} // don't forget to multiply radius with it! ;)
+
+snippet matrixmul
+	i64 mod;
+
+	struct matrix { 
+		int m,n;
+		i64 a[10][10];
+	};
+
+	void print( matrix& a ) {
+		REP(i,a.m) {
+			REP(j,a.n) cout <<" " << a.a[i][j];
+			cout << endl;
+		}
+	}
+
+	matrix operator * (  matrix& x,  matrix& y ) {
+		matrix ret;
+		ret.m = x.m;
+		ret.n = y.n;
+			
+		REP(i,ret.m) REP(j,ret.n) {
+			ret.a[i][j] = 0;
+			REP(k, x.n) {
+				ret.a[i][j] += (x.a[i][k] * y.a[k][j]);
+				ret.a[i][j] %= mod;
+			}
+		}
+		return ret;
+	}
+
+	matrix power( matrix& x , int n ) {
+		if( n == 1 ) return x;        
+		matrix ret = power( x, n/2 );
+		ret = ret * ret;
+		if( n % 2 == 0 ) return ret;
+		ret = ret * x ;
+		return ret;
+	}
+
+snippet heron
+	double area( double x, double y, double z ) {
+		double s = ( x + y + z ) / 2.;
+		double X = s * ( s - x ) * ( s - y ) * ( s - z );
+		return sqrt( X );
+	}
+

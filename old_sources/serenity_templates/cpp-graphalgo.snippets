@@ -1,0 +1,311 @@
+snippet bpm
+	#define M 1010
+	int grid[M][M];
+	int l[M], r[M], seen[M];
+	int rows, cols;
+	
+	bool dfs(int x)
+	{
+		if( seen[x] ) return false;
+		seen[x] = true;
+		Rep(i,cols) if( grid[x][i] ) if( r[i] == -1 || dfs( r[i] ) )
+		{
+			r[i] = x, l[x] = i;
+			return true;
+		}
+		return false;
+	}
+	
+	int bpm() {
+		SET( l, -1 );
+		SET( r, -1 );
+		int ret = 0;
+		Rep(i,rows) {
+			SET( seen, 0 );	
+			if( dfs( i ) ) ret ++;
+		}	
+		return ret;
+	}
+	
+	bool lT[M], rT[M];
+	
+	void konigdfs(int x)
+	{
+		if( !lT[x] ) return; lT[x] = 0;
+		Rep(i,cols) if(grid[x][i] && i != l[x])
+		{
+			rT[i] = true;
+			if( r[i] != -1) konigdfs(r[i]);
+		}
+	}
+	
+	int konig()
+	{
+		SET(lT, 1);
+		SET(rT, 0);
+		Rep(i,rows) if(l[i] == -1) konigdfs(i);
+	}
+
+snippet hopcroft
+	#define M 1000
+	vector< int > edge[ M ];
+	int nr, nc;
+
+	int n, m;
+	int l[M], r[M], seen[M];
+
+	bool dfs( int x ) {
+		if( seen[x] ) return false;
+		seen[x] = true;
+
+		REP(i,edge[x].sz) {
+			int v = edge[x][i];
+			if( r[v] == -1 || dfs( r[v] ) ) {
+				r[v] = x,  l[x] = v;
+				return true;
+			}
+		}
+		return false;
+	}
+
+	int match() {
+		int ret = 0;
+		REP(i,n) l[i] = -1; REP(i,m) r[i] = -1;
+		bool done;
+
+		do {
+			done = true;
+			REP(i,n) seen[i] = 0;
+			REP(i,n) if( l[i] == -1 && dfs( i ) ) done = false;
+		}while( !done );
+
+		REP(i,n) ret += ( l[i] != -1 );
+		return ret;
+	}
+
+snippet djikstra-set
+	double d[51][51]; 
+	double a[51][4001]; 
+	typedef pair<double, pii> st;
+	Rep(i,n) Rep(j,m) a[i][j] = 1e100;
+	S.clear();
+	/*add*/a[0][0] = 0.0; S.insert( make_pair(0.0, pii(0, 0) ) );
+	
+	while (!S.empty()) {
+		st curr = *S.begin(), next;
+		S.erase(S.begin());
+		i = curr.y.x;
+		k = curr.y.y;
+
+		for (j = 0; j < n; j++) {
+			next.x = curr.x + d[i][j];
+			next.y.x = j;
+			next.y.y = curr.y.y + get(d[i][j], maxD);
+			if (next.x <= maxT && next.y.y < m && next.x < a[next.y.x][next.y.y]) {
+				S.erase( st(a[next.y.x][next.y.y], next.y) );
+				/*add*/a[next.y.x][next.y.y] = next.x; S.insert(next);
+			}
+		}
+	}
+
+snippet dijkstra_prqueue
+	VI edge[Z], cost[Z];
+	int d[Z];
+	struct data {
+		int u, c;
+		data() {}
+		data( int uu, int cc ) : u( uu ), c( cc ) {}
+		bool operator < ( const data& p ) const {
+			return c > p.c;
+		}
+	};
+
+	int dijkstra( int na, int nb ) {
+		
+		priority_queue< data > q;
+		q.push( data( na, 0 ) );
+		FOR(i,1,ncity) d[i] = -1;
+		
+		d[na] = 0;
+		
+		while( !q.empty() ) {
+			data u = q.top(); q.pop();
+			if( d[ u.u ] < u.c ) continue;
+			
+			if( u.u == nb ) break;
+			REP(i,edge[u.u].sz) {
+				int v = edge[u.u][i];
+				if( d[v] == -1 || d[v] > d[u.u] + cost[u.u][i] ) {
+					d[v] = d[u.u] + cost[u.u][i];
+					q.push( data( v, d[v] ) );
+				}
+			}
+		}
+
+		return d[ nb ];
+	}
+
+snippet articulation_point
+	//articulation, root is a special case
+	DFS_Visit(v) { color[v]=GREY;time=time+1;d[v] = time;
+		low[v]= d[v];
+		for each w in Adj[v]{
+			if(color[w] == WHITE){
+				prev[w]=u;
+				DFS_Visit(w);
+				if low[w] >= d[v] 
+					record that vertex v is an articulation
+						if (low[w] < low[v]) low[v] := low[w];
+			} 
+			else if w is not the parent of v then
+				//--- (v,w) is a BACK edge
+				if (d[w] < low[v]) low[v] := d[w]; 
+		}
+		color[v] = BLACK;  time = time+1;   f[v] = time;
+	}
+
+snippet strongly_connected_c
+	// Inputs (populate these).
+	int deg[NN]; int adj[NN][NN];
+
+	// Union-Find.
+	int uf[NN];
+	int FIND( int x ) { return uf[x] == x ? x : uf[x] = FIND( uf[x] ); }
+	void UNION( int x, int y ) { uf[FIND( x )] = FIND( y ); }
+
+	// dfsn[u] is the DFS number of vertex u.
+	int dfsn[NN], dfsnext;
+
+	// mindfsn[u] is the smallest DFS number reachable from u.
+	int mindfsn[NN];
+
+	// The O(1)-membership stack containing the vertices of the current component.
+	int comp[NN], ncomp;
+	bool incomp[NN];
+
+	void dfs( int n, int u )
+	{
+	  dfsn[u] = mindfsn[u] = dfsnext++;
+	  incomp[comp[ncomp++] = u] = true;
+	  for( int i = 0, v; v = adj[u][i], i < deg[u]; i++ )
+	  {
+		if( !dfsn[v] ) dfs( n, v );
+		if( incomp[v] ) mindfsn[u] <?= mindfsn[v];
+	  }
+	  
+	  if( dfsn[u] == mindfsn[u] )
+	  {
+		// u is the root of a connected component. Unify and forget it.
+		do
+		{
+		  UNION( u, comp[--ncomp] );
+		  incomp[comp[ncomp]] = false;
+		} while( comp[ncomp] != u );
+	  }
+	}
+
+	void scc( int n )
+	{
+	  // Init union-find and DFS numbers.
+	  for( int i = 0; i < n; i++ ) dfsn[uf[i] = i] = ncomp = incomp[i] = 0;
+	  dfsnext = 1;
+
+	  for( int i = 0; i < n; i++ ) if( !dfsn[i] ) dfs( n, i );
+	}
+
+snippet djikstra_heap
+	/*- graph (global): adjacency matrix where graph[u][v] is the weight
+	*      of the edge u->v.
+	* - deg (global): (out-)degree of each vertex
+	* - adj (global): adjacency list. For each u, adj[u][0..deg[u]) are
+	*      the neighbours.
+	* - n: the number of vertices ([0, n-1] are considered as vertices).
+	* - s: source vertex.
+	* - t: sink.
+	*OUT
+	* - the length of the shortest path from s to t
+	* - prev[] contains the path predecessors
+	*/
+
+	int graph[NN][NN], adj[NN][NN], deg[NN];
+	int d[NN], q[NN], inq[NN], prev[NN], qs;
+
+	#define CLR( x, v ) memset( x, v, sizeof( x ) )
+	#define BUBL { \
+		t = q[i]; q[i] = q[j]; q[j] = t; \
+		t = inq[q[i]]; inq[q[i]] = inq[q[j]]; inq[q[j]] = t; }
+
+	int dijkstra( int n, int s, int t )
+	{
+		CLR( d, 9 ); CLR( inq, -1 ); CLR( prev, -1 );
+		d[s] = qs = 0;
+		inq[q[qs++] = s] = 0;
+		prev[s] = -2;
+		
+		while( qs )
+		{
+			// get the minimum from the q
+			int u = q[0]; inq[u] = -1;
+			
+			// bubble down
+			q[0] = q[--qs];
+			if( qs ) inq[q[0]] = 0;
+			for( int i = 0, j = 2*i + 1, t; j < qs; i = j, j = 2*i + 1 )
+			{
+				if( j + 1 < qs && d[q[j + 1]] < d[q[j]] ) j++;
+				if( d[q[j]] >= d[q[i]] ) break;
+				BUBL;
+			}
+			
+			// relax neighbours
+			for( int k = 0, v = adj[u][k]; k < deg[u]; v = adj[u][++k] )
+			{
+				int newd = d[u] + graph[u][v];
+				if( newd < d[v] )
+				{
+					d[v] = newd;
+					prev[v] = u;
+					if( inq[v] < 0 ) { inq[q[qs] = v] = qs; qs++; }
+					
+					// bubble up
+					for( int i = inq[v], j = ( i - 1 )/2, t; 
+						 d[q[i]] < d[q[j]]; i = j, j = ( i - 1 )/2 )
+						 BUBL;
+				}
+			}
+		}
+		return d[t];
+	}
+	#include <stdio.h>
+	int main()
+	{
+		int n, m;
+		while( scanf( " %d %d\n", &n, &m ) == 2 )
+		{
+			memset( deg, 0, sizeof( deg ) );
+			while( m-- )
+			{
+				int u, v, w;
+				scanf( " %d %d %d", &u, &v, &w );
+				graph[u][v] = graph[v][u] = w;
+				adj[u][deg[u]++] = v;
+				adj[v][deg[v]++] = u;
+			}    
+			
+			int ans = dijkstra( n, 0, n - 1 );
+			
+			printf( "%d\n", ans );
+		}
+		return 0;
+	}
+
+snippet kruskal
+	sort( s, s+nedge, comp );
+	unionfind u;
+	int cost = 0;
+	REP(i,nedge) {
+		if( u.find( s[i].a ) != u.find( s[i].b ) ) {
+			cost += s[i].c;
+			u.Union( s[i].a , s[i].b );
+		}
+	}
