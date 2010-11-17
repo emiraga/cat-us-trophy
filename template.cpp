@@ -38,11 +38,6 @@ typedef long long LL;
 typedef long double LD;
 typedef pair<int,int> pii;
 
-#define D(x) if(1) cout << __LINE__ <<" "<< #x " = " << (x) << endl
-#define D2(x,y) if(1) cout << __LINE__ <<" "<< #x " = " << (x) <<", " << #y " = " << (y) << endl
-
-int main()
-{
-    return 0;
-}
-
+#define D(x) if(1) cout << __LINE__ <<" "<< #x " = " << (x) << endl;
+#define D2(x,y) if(1) cout << __LINE__ <<" "<< #x " = " << (x) \
+     <<", " << #y " = " << (y) << endl;

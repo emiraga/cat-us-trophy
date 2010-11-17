@@ -16,6 +16,17 @@
 \renewcommand{\footrulewidth}{0pt}
 \fancyhf{} % clear all header and footer fields
 \fancyhead[R]{\footnotesize \thepage\quad}
+
+\usepackage[small,compact]{titlesec}
+
+\addtolength{\parindent}{-5mm}
+
+\newcommand{\Section}[1]{
+   \vspace{-3mm}
+   \section*{#1}
+   \addcontentsline{toc}{subsection}{#1}
+   \vspace{-2mm}
+}
 \end_preamble
 \use_default_options false
 \language english
@@ -113,6 +124,16 @@ LatexCommand tableofcontents
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -120,18 +141,134 @@ status open
 
 
 \backslash
-setlength{
-\backslash
-parskip}{3mm}
+Section{
 \end_layout
 
 \end_inset
 
- 
+.vimrc
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
-\begin_layout Subsubsection
-Sums
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "/home/emiraga/gh/emiraga/cat-us-trophy/vimrc"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Section{
+\end_layout
+
+\end_inset
+
+.bashrc
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "/home/emiraga/gh/emiraga/cat-us-trophy/bashrc"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Section{
+\end_layout
+
+\end_inset
+
+template.cpp
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "/home/emiraga/gh/emiraga/cat-us-trophy/template.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Section{
+\end_layout
+
+\end_inset
+
+Mathematical Sums
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -321,15 +458,37 @@ Sums
 \end_layout
 
 \begin_layout Standard
-d
 \begin_inset Newpage newpage
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Section{
+\end_layout
+
+\end_inset
+
 Suffix arrays
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
