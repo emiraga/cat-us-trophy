@@ -1,3 +1,4 @@
+app1
 ## Prerequisites
 
     sudo apt-get install lyx
