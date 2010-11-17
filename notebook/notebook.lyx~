@@ -4,30 +4,18 @@
 \begin_header
 \textclass article
 \begin_preamble
-
-\usepackage[cm]{fullpage}\usepackage{amsfonts}\usepackage{comment}\usepackage{fancyvrb}\usepackage{fancyhdr}\@ifundefined{definecolor}
- {\usepackage{color}}{}
+\usepackage[cm]{fullpage}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{fancyvrb}
+\usepackage{fancyhdr}
 \usepackage{cmap}
-
-\let\le=\leqslant
-\let\ge=\geqslant
-
-
-\pagenumbering{arabic}
-
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\fancyhead{}
-\fancyhead[R]{\small\textsf{\textbf{\thepage}}{}}
-\fancyfoot{}
-
-\newcommand{\Section}[1]{
-  \section*{#1}
-  \addcontentsline{toc}{subsection}{#1}
-  \vspace{-3mm}
-}
-
-\newcommand{\Topic}[1]{\textbf{#1}}
+\fancyhf{} % clear all header and footer fields
+\fancyhead[R]{\footnotesize \thepage\quad}
 \end_preamble
 \use_default_options false
 \language english
@@ -46,16 +34,23 @@
 \spacing single
 \use_hyperref false
 \papersize a4paper
-\use_geometry false
+\use_geometry true
 \use_amsmath 2
 \use_esint 1
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
+\leftmargin 9mm
+\topmargin 1mm
+\rightmargin 9mm
+\bottommargin 9mm
+\headheight 1mm
+\headsep 1mm
+\footskip 0mm
 \secnumdepth -1
 \tocdepth 5
 \paragraph_separation skip
-\defskip 3mm
+\defskip 0mm
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -93,6 +88,24 @@ IIUM cat-us-trophy
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+parskip}{0mm}
+\end_layout
+
+\end_inset
+
  
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
@@ -100,9 +113,24 @@ LatexCommand tableofcontents
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+parskip}{3mm}
 \end_layout
 
-\begin_layout Section
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection
 Sums
 \end_layout
 
@@ -286,6 +314,28 @@ Sums
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+d
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Suffix arrays
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/suffix_array.cpp"
 
 \end_inset
 
