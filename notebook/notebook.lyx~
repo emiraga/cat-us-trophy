@@ -51,9 +51,9 @@
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
-\leftmargin 9mm
+\leftmargin 11mm
 \topmargin 1mm
-\rightmargin 9mm
+\rightmargin 11mm
 \bottommargin 9mm
 \headheight 1mm
 \headsep 1mm
@@ -83,10 +83,6 @@
 \begin_inset space \hfill{}
 \end_inset
 
-IIUM cat-us-trophy
-\begin_inset space \hfill{}
-\end_inset
-
 
 \family default
 \series default
@@ -100,6 +96,31 @@ IIUM cat-us-trophy
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-20mm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family sans
+\series bold
+\size larger
+IIUM cat-us-trophy
 \end_layout
 
 \begin_layout Standard
@@ -127,7 +148,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace medskip
+\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -458,13 +479,40 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage newpage
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Section{
+\end_layout
+
+\end_inset
+
+RMQ DP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/rmqdp.cpp"
+
+\end_inset
+
+
 \begin_inset ERT
 status open
 
