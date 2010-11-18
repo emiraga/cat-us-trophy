@@ -1,1 +1,0 @@
-ulimit -c unlimited
