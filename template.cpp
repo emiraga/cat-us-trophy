@@ -22,8 +22,8 @@
 using namespace std;
 
 #define REP(i,n) for(int i=0; i<(n); i++)
-#define FOR(i,a,b) for( __typeof(b) i=(a); i<=(b); i++)
-#define FORD(i,a,b) for(__typeof(a) i=(a); i>=(b); i--) 
+#define FOR(i,a,b) for(int i=(a); i<=(b); i++)
+#define FORD(i,a,b) for(int i=(a); i>=(b); i--) 
 #define FORIT(i, m) for (__typeof((m).begin()) i=(m).begin(); i!=(m).end(); ++i)
 #define SET(t,v) memset((t), (v), sizeof(t))
 #define ALL(x) x.begin(), x.end()
