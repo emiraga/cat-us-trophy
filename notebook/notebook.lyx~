@@ -204,43 +204,6 @@ Section{
 
 \end_inset
 
-.bashrc
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand verbatiminput
-filename "/home/emiraga/gh/emiraga/cat-us-trophy/bashrc"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Section{
-\end_layout
-
-\end_inset
-
 template.cpp
 \begin_inset ERT
 status open
@@ -294,7 +257,7 @@ status open
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="3">
+<lyxtabular version="3" rows="4" columns="3">
 <features>
 <column alignment="left" valignment="top" width="0">
 <column alignment="left" valignment="top" width="0">
@@ -439,38 +402,6 @@ status open
 \end_inset
 </cell>
 </row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $1+x+x^{2}+\dots=1/(1-x)$
-\end_inset
-
- 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="none" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="none" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
 </lyxtabular>
 
 \end_inset
@@ -479,6 +410,10 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -543,6 +478,43 @@ status open
 \begin_inset CommandInset include
 LatexCommand verbatiminput
 filename "src/suffix_array.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Section{
+\end_layout
+
+\end_inset
+
+Tarjan's offline LCA
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/offlinelca.code"
 
 \end_inset
 

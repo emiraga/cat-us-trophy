@@ -1,0 +1,7 @@
+function TarjanOLCA(u)
+    MakeSet(u); u.ancestor := u;
+    for each v in u.children do
+        TarjanOLCA(v); Union(u,v); Find(u).ancestor := u;
+    u.colour := black;
+    for each v such that {u,v} in P and v.color==black do
+        print "LCA", u, v, Find(v).ancestor

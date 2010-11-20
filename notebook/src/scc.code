@@ -1,0 +1,10 @@
+procedure tarjan(v)
+  index = count; v.lowlink = count++; S.push(v);color[v] = 1;
+  for all (v, v2) in E do
+     if (!color[v2])
+        tarjan(v2); v.lowlink = min(v.lowlink, v2.lowlink);
+     else if (color[v2]==1)
+        v.lowlink = min(v.lowlink, v2.lowlink);
+  if (v.lowlink == index)
+    do { v2 = S.top(); S.pop(); print v2; color[v2]=2; } while (v2 != v);
+for all v in V do if(!color[v]) tarjan(v);
