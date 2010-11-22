@@ -1,4 +1,4 @@
-#LyX 1.6.7 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -22,13 +22,14 @@
 \addtolength{\parindent}{-5mm}
 
 \newcommand{\Section}[1]{
-   \vspace{-3mm}
+   \vspace{-2mm}
    \section*{#1}
    \addcontentsline{toc}{subsection}{#1}
    \vspace{-1mm}
 }
 
 \newcommand{\Topic}[1]{
+\vspace{1mm}
 \textbf{#1}
 }
 \end_preamble
@@ -253,7 +254,7 @@ Section{
 
 \end_inset
 
-Combinatorics: binomial, catalan
+Combinatorics
 \begin_inset ERT
 status open
 
@@ -3053,7 +3054,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -3061,7 +3062,7 @@ status open
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3074,7 +3075,7 @@ Topic{
 
 Catalan numbers
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3139,6 +3140,457 @@ status collapsed
 \end_inset
 
 -gon.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Derangements
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Number of permutations of 
+\begin_inset Formula $n=0,1,2,\dots$
+\end_inset
+
+ elements without fixed points is 
+\begin_inset Formula $1,0,1,2,9,44,265,1854,14833,\dots$
+\end_inset
+
+ Recurrence: 
+\begin_inset Formula $D_{n}=(n-1)(D_{n-1}+D_{n-2})=nD_{n-1}+(-1)^{n}$
+\end_inset
+
+.
+ Corollary: number of permutations with exactly 
+\begin_inset Formula $k$
+\end_inset
+
+ fixed points is 
+\begin_inset Formula ${n \choose k}D_{n-k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Stirling numbers of 
+\begin_inset Formula $1^{st}$
+\end_inset
+
+ kind
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $s_{n,k}$
+\end_inset
+
+ is 
+\begin_inset Formula $(-1)^{n-k}$
+\end_inset
+
+ times the number of permutations of 
+\begin_inset Formula $n$
+\end_inset
+
+ elements with exactly 
+\begin_inset Formula $k$
+\end_inset
+
+ permutation cycles.
+ 
+\begin_inset Formula $\left[{n\atop k}\right]=|s_{n,k}|=|s_{n-1,k-1}|+(n-1)|s_{n-1,k}|$
+\end_inset
+
+
+\begin_inset Formula $\quad$
+\end_inset
+
+ 
+\begin_inset Formula $s(0,0)=1$
+\end_inset
+
+ and 
+\begin_inset Formula $s(n,0)=s(0,n)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Stirling numbers of 
+\begin_inset Formula $2^{nd}$
+\end_inset
+
+ kind
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $S_{n,k}$
+\end_inset
+
+ is the number of ways to partition a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ elements into exactly 
+\begin_inset Formula $k$
+\end_inset
+
+ non-empty subsets.
+ 
+\begin_inset Formula $\left\{ {n\atop k}\right\} =S_{n,k}=S_{n-1,k-1}+kS_{n-1,k}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $S_{n,1}=S_{n,n}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Bell numbers
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $B_{n}$
+\end_inset
+
+ is the number of partitions of 
+\begin_inset Formula $n$
+\end_inset
+
+ elements.
+ 
+\begin_inset Formula $B_{0},\ldots=1,1,2,5,15,52,203,877,\ldots$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Formula $B_{n+1}=\sum_{k=0}^{n}{n \choose k}B_{k}=\sum_{k=1}^{n+1}S_{n,k}$
+\end_inset
+
+.
+ Bell triangle: 
+\begin_inset Formula $B_{r}=a_{r,1}=a_{r-1,r-1}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{r,c}=a_{r-1,c-1}+a_{r,c-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Eulerian numbers
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $E(n,k)=\left\langle {n\atop k}\right\rangle $
+\end_inset
+
+ is the number of permutations with exactly 
+\begin_inset Formula $k$
+\end_inset
+
+ descents (
+\begin_inset Formula $i:\pi_{i}<\pi_{i+1}$
+\end_inset
+
+) / ascents (
+\begin_inset Formula $\pi_{i}>\pi_{i+1}$
+\end_inset
+
+) / excedances (
+\begin_inset Formula $\pi_{i}>i$
+\end_inset
+
+) / 
+\begin_inset Formula $k+1$
+\end_inset
+
+ weak excedances (
+\begin_inset Formula $\pi_{i}\ge i$
+\end_inset
+
+).
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Formula: 
+\begin_inset Formula $E(n,m)=(m+1)E(n-1,m)+(n-m)E(n-1,m-1)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E(n,0)=E(n,n−1)=1$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E(n,m)=\sum_{k=0}^{m}(-1)^{k}\binom{n+1}{k}(m+1-k)^{n}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Double factorial
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Permutations of the multiset 
+\begin_inset Formula $\left\{ 1,1,2,3,\dots n,n\right\} $
+\end_inset
+
+ such that for each 
+\begin_inset Formula $k$
+\end_inset
+
+, all the numbers between two occurrences of 
+\begin_inset Formula $k$
+\end_inset
+
+ in the permutation are greater than 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ 
+\begin_inset Formula $(2n-1)!!=\prod_{k=1}^{n}\left(2k-1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Eulerian numbers of 
+\begin_inset Formula $2^{nd}$
+\end_inset
+
+ kind
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Related to Double factorial, number of all such permutations that have
+ exactly 
+\begin_inset Formula $m$
+\end_inset
+
+ ascents.
+ 
+\begin_inset Formula $\left\langle \left\langle {n\atop m}\right\rangle \right\rangle =(2n-m-1)\left\langle \left\langle {{n-1}\atop {m-1}}\right\rangle \right\rangle +(m+1)\left\langle \left\langle {{n-1}\atop {m}}\right\rangle \right\rangle $
+\end_inset
+
+.
+ 
+\begin_inset Formula $\left\langle \left\langle {n\atop 0}\right\rangle \right\rangle =1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Multinomial theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $(a_{1}+\dots+a_{k})^{n}=\sum{n \choose n_{1},\dots,n_{k}}\ a_{1}^{n_{1}}\dots a_{k}^{n_{k}}$
+\end_inset
+
+, where 
+\begin_inset Formula $n_{i}\ge0$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum n_{i}=n$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Formula ${n \choose n_{1},\dots,n_{k}}=M(n_{1},\dots,n_{k})=\frac{n!}{n_{1}!\dots n_{k}!}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $M(a,\dots,b,c,\dots)=M(a+\dots+b,c,\dots)M(a,\dots,b)$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
