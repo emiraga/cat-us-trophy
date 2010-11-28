@@ -17,15 +17,15 @@
 #include<climits>
 using namespace std;
 
-#define REP(i,n) for(int i=0; i<(n); i++)
-#define FOR(i,a,b) for(int i=(a); i<=(b); i++)
-#define FORD(i,a,b) for(int i=(a); i>=(b); i--) 
+#define REP(i,n) for(int i=0, _e(n); i<_e; i++)
+#define FOR(i,a,b) for(int i(a), _e(b); i<=_e; i++)
+#define FORD(i,a,b) for(int i(a), _e(b); i>=_e; i--) 
 #define FORIT(i, m) for (__typeof((m).begin()) i=(m).begin(); i!=(m).end(); ++i)
 #define SET(t,v) memset((t), (v), sizeof(t))
 #define ALL(x) x.begin(), x.end()
 #define UNIQUE(c) (c).resize( unique( ALL(c) ) - (c).begin() )
 
-#define sz(v) int(v.size())
+#define sz size()
 #define pb push_back
 #define VI vector<int>
 #define VS vector<string>
