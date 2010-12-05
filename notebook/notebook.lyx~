@@ -3606,6 +3606,107 @@ Section{
 
 \end_inset
 
+Data structures
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+BIT - Binary indexed trees
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/data_struct/BIT.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+BIT 2D
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/data_struct/BIT2D.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
 RMQ DP
 \begin_inset ERT
 status open
@@ -3623,11 +3724,51 @@ status open
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand verbatiminput
-filename "src/rmqdp.cpp"
+filename "src/data_struct/rmq_dp.cpp"
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+RMQ segment tree
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/data_struct/rmq_segtree.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3879,7 +4020,7 @@ Topic{
 
 \end_inset
 
-Bipartite matching
+Bipartite matching with Konig
 \begin_inset ERT
 status open
 
@@ -3896,7 +4037,7 @@ status open
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand verbatiminput
-filename "src/graph/bpm.cpp"
+filename "src/graph/bpm_konig.cpp"
 
 \end_inset
 
@@ -4022,12 +4163,12 @@ status open
 
 
 \backslash
-Topic{
+Section{
 \end_layout
 
 \end_inset
 
-Bipartite matching with Konig
+Geometry
 \begin_inset ERT
 status open
 
@@ -4042,13 +4183,46 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand verbatiminput
-filename "src/graph/bpm.cpp"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
 
 \end_inset
 
+Circle using three points
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ Let 
+\begin_inset Formula $A=(0,0)$
+\end_inset
+
+ centers are 
+\begin_inset Formula $(C{}_{y}(B_{x}^{2}+B_{y}^{2})-B{}_{y}(C_{x}^{2}+C_{y}^{2}))/D'$
+\end_inset
+
+ and 
+\begin_inset Formula $(B{}_{x}(C_{x}^{2}+C_{y}^{2})-C{}_{x}(B_{x}^{2}+B_{y}^{2}))/D$
+\end_inset
+
+ where 
+\begin_inset Formula $D=2(B{}_{x}C{}_{y}-B{}_{y}C{}_{x})$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4082,7 +4256,7 @@ status open
 \begin_inset Graphics
 	filename asciitable.png
 	lyxscale 20
-	width 15cm
+	width 18cm
 
 \end_inset
 
