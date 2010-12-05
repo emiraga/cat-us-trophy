@@ -34,7 +34,9 @@ void suffix_array(int n) {
                     for(int k=rank[s]+1;!bh[k] && b2h[k]; k++) b2h[k]=false;
         }   }
         REP(i,n) pos[rank[i]]=i, bh[i]|=b2h[i];
-}   }
+    }
+    REP(i,n) pos[rank[i]]=i;
+}
 void get_lcp(int n) {
     lcp[0]=0;
     int h=0;

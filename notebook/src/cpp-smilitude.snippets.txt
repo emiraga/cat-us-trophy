@@ -1,0 +1,69 @@
+snippet power_iterative
+	LL power( LL a, LL b, LL mod ) {
+		LL x = 1, y = a;
+		while( b ) {
+			if( b&1 ) x *= y, x %= mod;
+			y *= y, y %= mod, b/=2;
+		}
+		return x%mod;
+	}
+
+snippet bit_2D
+	int bit[M][M], n;
+	int sum( int x, int y ){
+		int ret = 0;
+		while( x > 0 ){
+			int yy = y; 
+				while( yy > 0 ) ret += bit[x][yy], yy -= yy & -yy;
+			x -= x & -x ;
+		}
+		return ret ;
+	}
+	void update(int x , int y , int val){
+		int y1;
+		while (x <= n){
+			y1 = y;
+			while (y1 <= n){
+				bit[x][y1] += val;
+				y1 += (y1 & -y1); 
+			}
+			x += (x & -x); 
+		}
+	}
+
+snippet phi
+	int phi (int n) {
+		int ret = n;
+		for (int i=2; i*i<=n; ++i) if( n%i == 0) {
+			while(n % i == 0) n /= i;
+			ret -= ret / i;
+		}
+		if (n > 1) ret -= ret / n;
+		return ret;
+	}
+
+snippet bellman
+	#define M 305
+	VI e[M], c[M];
+	int n, d[M], p[M];
+	int inf = 1<<29;
+
+	int bford( int s, int f ) {
+		REP(i,n) d[i] = i == s ? 0 : inf, p[i] = -1;
+		REP(_,n-1) {
+			bool done = 1;
+			REP(i,n) REP(j,e[i].sz) {
+				int u = i, v = e[i][j], uv = c[i][j];
+				if( d[u] + uv < d[v] ) d[v] = d[u] + uv, p[v] = u, done = 0;
+			}
+			if( done ) break;
+		}
+		REP(i,n) REP(j,e[i].sz) {
+			int u = i, v = e[i][j], uv = c[i][j];
+			if( d[u] + uv < d[v] ) return -33;
+		}
+		if( d[f] == inf ) return -33; 
+		return d[f];
+	}
+
+
