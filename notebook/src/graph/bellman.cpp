@@ -1,4 +1,3 @@
-#define M 305
 VI e[M], c[M];
 int n, d[M], p[M];
 int inf = 1<<29;

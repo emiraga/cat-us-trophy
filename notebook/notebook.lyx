@@ -175,7 +175,7 @@ status open
 
 
 \backslash
-Section{
+Topic{
 \end_layout
 
 \end_inset
@@ -212,7 +212,7 @@ status open
 
 
 \backslash
-Section{
+Topic{
 \end_layout
 
 \end_inset
@@ -3606,7 +3606,8 @@ Section{
 
 \end_inset
 
-Data structures
+Data structures (BIT, BIT2D, RMQ-DP, RMQ-segment tree, union-find, misof's
+ tree) 
 \begin_inset ERT
 status open
 
@@ -3776,6 +3777,444 @@ status open
 
 
 \backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Union find - rank by number of elements
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/data_struct/unionfind.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+misof's tree
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/data_struct/misof.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Section{
+\end_layout
+
+\end_inset
+
+Number theory
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Congruence 
+\begin_inset Formula $ax\equiv b\ (\mathrm{mod}\ n)$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/number/congruence_ax_b_mod_n.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Extended GCD
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/number/extended_euclid.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+GCD
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/number/gcd.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+General EGCD
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/number/gen_euclid.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Phi
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/number/phi.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Power iterative - expmod
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/number/power_iterative.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Rabin-Miller
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/number/rabinmiller.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Sieve prime
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/number/sieve_prime.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Sieve totient
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/number/sieve_totient.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 Section{
 \end_layout
 
@@ -3919,7 +4358,7 @@ Section{
 
 \end_inset
 
-Graph algorithms (LCA, SCC, NetFlow, MinCost, BPM)
+Graph algorithms (LCA, SCC, BPM-konig, Bellman-Ford, NetFlow, MinCost MaxFlow)
 \begin_inset ERT
 status open
 
@@ -4057,6 +4496,43 @@ Topic{
 
 \end_inset
 
+Bellman-Ford
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/graph/bellman.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
 Network flow - Slow
 \begin_inset ERT
 status open
@@ -4149,6 +4625,70 @@ status open
 \begin_inset CommandInset include
 LatexCommand verbatiminput
 filename "src/graph/mincost_maxflow.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Section{
+\end_layout
+
+\end_inset
+
+Misc (LIS)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Longest increasing subsequence
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/misc/LIS.cpp"
 
 \end_inset
 
