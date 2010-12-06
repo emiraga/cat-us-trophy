@@ -7002,6 +7002,1335 @@ status open
 
 \begin_layout Standard
 \begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Section{
+\end_layout
+
+\end_inset
+
+Geometry
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Pick's theorem
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $I=A-B/2+1$
+\end_inset
+
+, where 
+\begin_inset Formula $A$
+\end_inset
+
+ is the area of a lattice polygon, 
+\begin_inset Formula $I$
+\end_inset
+
+ is number of lattice points inside it, and 
+\begin_inset Formula $B$
+\end_inset
+
+ is number of lattice points on the boundary.
+ Number of lattice points minus one on a line segment from 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ and 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ is 
+\begin_inset Formula $\gcd(x,y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a\cdot b=a_{x}b_{x}+a_{y}b_{y}=|a|\cdot|b|\cdot\cos(\theta)$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Formula $a\times b=a_{x}b_{y}-a_{y}b_{x}=|a|\cdot|b|\cdot\sin(\theta)$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 3D: 
+\begin_inset Formula $a\times b=(a_{y}b_{z}-a_{z}b_{y},\ a_{z}b_{x}-a_{x}b_{z},\ a_{x}b_{y}-a_{y}b_{x})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Line
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $ax+by=c$
+\end_inset
+
+ through 
+\begin_inset Formula $A(x_{1},y_{1})$
+\end_inset
+
+ and 
+\begin_inset Formula $B(x_{2},y_{2})$
+\end_inset
+
+: 
+\begin_inset Formula $a=y_{1}-y_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $b=x_{2}-x_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $c=ax_{1}+by_{1}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Half-plane to the left of the directed segment 
+\begin_inset Formula $AB$
+\end_inset
+
+: 
+\begin_inset Formula $ax+by\ge c$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Normal vector: 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+.
+ Direction vector: 
+\begin_inset Formula $(b,-a)$
+\end_inset
+
+.
+ Perpendicular line: 
+\begin_inset Formula $-bx+ay=d$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Point of intersection of 
+\begin_inset Formula $a_{1}x+b_{1}y=c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{2}x+b_{2}y=c_{2}$
+\end_inset
+
+ is 
+\begin_inset Formula $\frac{1}{a_{1}b_{2}-a_{2}b_{1}}(c_{1}b_{2}-c_{2}b_{1},a_{1}c_{2}-a_{2}c_{1})$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Distance from line 
+\begin_inset Formula $ax+by+c=0$
+\end_inset
+
+ to point 
+\begin_inset Formula $(x_{0},y_{0})$
+\end_inset
+
+ is 
+\begin_inset Formula $|ax_{0}+by_{0}+c|/\sqrt{a^{2}+b^{2}}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Distance from line 
+\begin_inset Formula $AB$
+\end_inset
+
+ to 
+\begin_inset Formula $P$
+\end_inset
+
+ (for any dimension): 
+\begin_inset Formula $\frac{|(A-P)\times(B-P)|}{|A-B|}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Point-line segment distance: 
+\size small
+TODO 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Projection
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ of point 
+\begin_inset Formula $C$
+\end_inset
+
+ onto line 
+\begin_inset Formula $AB$
+\end_inset
+
+ is 
+\begin_inset Formula $\frac{AB\cdot AC}{AB\cdot AB}AB$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Projection of 
+\begin_inset Formula $(x_{0},y_{0})$
+\end_inset
+
+ onto line 
+\begin_inset Formula $ax+by=c$
+\end_inset
+
+ is 
+\begin_inset Formula $(x_{0},y_{0})+\frac{1}{a^{2}+b^{2}}(ad,bd)$
+\end_inset
+
+, where 
+\begin_inset Formula $d=c-ax_{0}-by_{0}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Projection of the origin is 
+\begin_inset Formula $\frac{1}{a^{2}+b^{2}}(ac,bc)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Segment-segment intersection
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Two line segments intersect if one of them contains an endpoint of the
+ other segment, or each segment straddles the line, containing the other
+ segment (
+\begin_inset Formula $AB$
+\end_inset
+
+ straddles line 
+\begin_inset Formula $l$
+\end_inset
+
+ if 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are on the opposite sides of 
+\begin_inset Formula $l$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Circle-circle and circle-line intersection
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\size small
+TODO
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Circle from 3 points (circumcircle)
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Intersect two perpendicular bisectors.
+ Line perpendicular to 
+\begin_inset Formula $ax+by=c$
+\end_inset
+
+ has the form 
+\begin_inset Formula $-bx+ay=d$
+\end_inset
+
+.
+ Find 
+\begin_inset Formula $d$
+\end_inset
+
+ by substituting midpoint's coordinates.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Angular bisector
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ of angle 
+\begin_inset Formula $ABC$
+\end_inset
+
+ is line 
+\begin_inset Formula $BD$
+\end_inset
+
+, where 
+\begin_inset Formula $D=\frac{BA}{|BA|}+\frac{BC}{|BC|}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Center of incircle of triangle 
+\begin_inset Formula $ABC$
+\end_inset
+
+ is at the intersection of angular bisectors, and is 
+\begin_inset Formula $\frac{a}{a+b+c}A+\frac{b}{a+b+c}B+\frac{c}{a+b+c}C$
+\end_inset
+
+, where 
+\begin_inset Formula $a$
+\end_inset
+
+, 
+\begin_inset Formula $b$
+\end_inset
+
+, 
+\begin_inset Formula $c$
+\end_inset
+
+ are lengths of sides, opposite to vertices 
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+, 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ Radius 
+\begin_inset Formula $=\frac{2S}{a+b+c}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Counter-clockwise rotation around the origin
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $(x,y)\mapsto(x\cos\phi-y\sin\phi,x\sin\phi+y\cos\phi)$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 90-degrees counter-clockwise rotation: 
+\begin_inset Formula $(x,y)\mapsto(-y,x)$
+\end_inset
+
+.
+ Clockwise: 
+\begin_inset Formula $(x,y)\mapsto(y,-x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+3D rotation
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ by ccw angle 
+\begin_inset Formula $\phi$
+\end_inset
+
+ around axis 
+\begin_inset Formula $\mathbf{n}$
+\end_inset
+
+: 
+\begin_inset Formula $\mathbf{r}'=\mathbf{r}\cos\phi+\mathbf{n}(\mathbf{n}\cdot\mathbf{r})(1-\cos\phi)+(\mathbf{n}\times\mathbf{r})\sin\phi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Plane equation from 3 points
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $N\cdot(x,y,z)=N\cdot A$
+\end_inset
+
+, where 
+\begin_inset Formula $N$
+\end_inset
+
+ is normal: 
+\begin_inset Formula $N=(B-A)\times(C-A)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+3D figures
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features>
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sphere 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Volume 
+\begin_inset Formula $V=\frac{4}{3}\pi r^{3}$
+\end_inset
+
+, surface area 
+\begin_inset Formula $S=4\pi r^{2}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x=\rho\sin\theta\cos\phi$
+\end_inset
+
+, 
+\begin_inset Formula $y=\rho\sin\theta\sin\phi$
+\end_inset
+
+, 
+\begin_inset Formula $z=\rho\cos\theta$
+\end_inset
+
+, 
+\begin_inset Formula $\phi\in[-\pi,\pi]$
+\end_inset
+
+, 
+\begin_inset Formula $\theta\in[0,\pi]$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Spherical section 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Volume 
+\begin_inset Formula $V=\pi h^{2}(r-h/3)$
+\end_inset
+
+, surface area 
+\begin_inset Formula $S=2\pi rh$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pyramid 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Volume 
+\begin_inset Formula $V=\frac{1}{3}hS_{base}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cone 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Volume 
+\begin_inset Formula $V=\frac{1}{3}\pi r^{2}h$
+\end_inset
+
+, lateral surface area 
+\begin_inset Formula $S=\pi r\sqrt{r^{2}+h^{2}}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Area of a simple polygon
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $\frac{1}{2}\sum_{i=0}^{n-1}(x_{i}y_{i+1}-x_{i+1}y_{i})$
+\end_inset
+
+, where 
+\begin_inset Formula $x_{n}=x_{0},y_{n}=y_{0}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Area is negative if the boundary is oriented clockwise.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Winding number
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Shoot a ray from given point in an arbitrary direction.
+ For each intersection of ray with polygon's side, add 
+\begin_inset Formula $+1$
+\end_inset
+
+ if the side crosses it counterclockwise, and 
+\begin_inset Formula $-1$
+\end_inset
+
+ if clockwise.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Convex Hull
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\size small
+TODO
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Trigonometric identities
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="2">
+<features>
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\tan(\alpha+\beta)=\frac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sin2\alpha=2\sin\alpha\cos\alpha$
+\end_inset
+
+, 
+\begin_inset Formula $\cos2\alpha=\cos^{2}\alpha-\sin^{2}\alpha$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cos^{2}\alpha=\frac{1}{2}(1+\cos2\alpha)$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sin^{2}\alpha=\frac{1}{2}(1-\cos2\alpha)$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sin\alpha+\sin\beta=2\sin\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cos\alpha+\cos\beta=2\cos\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sin\alpha-\sin\beta=2\sin\frac{\alpha-\beta}{2}\cos\frac{\alpha+\beta}{2}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cos\alpha-\cos\beta=-2\sin\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\tan\alpha+\tan\beta=\frac{\sin(\alpha+\beta)}{\cos\alpha\cos\beta}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cot\alpha+\cot\beta=\frac{\sin(\alpha+\beta)}{\sin\alpha\sin\beta}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sin\alpha\sin\beta=\frac{1}{2}[\cos(\alpha-\beta)-\cos(\alpha+\beta)]$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cos\alpha\cos\beta=\frac{1}{2}[\cos(\alpha-\beta)+\cos(\alpha+\beta)]$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sin\alpha\cos\beta=\frac{1}{2}[\sin(\alpha+\beta)+\sin(\alpha-beta)]$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sin'x=\cos x$
+\end_inset
+
+, 
+\begin_inset Formula $\cos'x=-\sin x$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Law of sines: 
+\begin_inset Formula $\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}=2R_{out}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Inscribed/outscribed circles: 
+\begin_inset Formula $R_{out}=\frac{abc}{4S}$
+\end_inset
+
+, 
+\begin_inset Formula $R_{in}=\frac{2S}{a+b+c}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Law of cosines: 
+\begin_inset Formula $c^{2}=a^{2}+b^{2}-2ab\cos C$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Heron: 
+\begin_inset Formula $\sqrt{s(s-a)(s-b)(s-c)}$
+\end_inset
+
+, 
+\begin_inset Formula $s=\frac{a+b+c}{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Law of tangents: 
+\begin_inset Formula $\frac{a+b}{a-b}=\frac{\tan[\frac{1}{2}(A+B)]}{\tan[\frac{1}{2}(A-B)]}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta$
+\end_inset
+
+'s area, given side and adjacent angles: 
+\begin_inset Formula $\frac{c^{2}}{2(\cot\alpha+\cot\beta)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
@@ -7032,6 +8361,135 @@ status open
 	filename asciitable.jpg
 	lyxscale 20
 	width 18cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Days of week
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features>
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+January 1, 1600: Saturday 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+January 1, 1900: Monday 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+June 13, 2042: Friday 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+January 1, 2008: Tuesday 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+April 1, 2008: Tuesday 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+April 9, 2008: Wednesday 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+December 31, 1999: Friday 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+January 1, 3000: Wednesday 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
