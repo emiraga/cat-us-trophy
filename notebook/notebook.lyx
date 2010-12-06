@@ -4211,7 +4211,7 @@ status open
 \end_inset
 
  centers are 
-\begin_inset Formula $(C{}_{y}(B_{x}^{2}+B_{y}^{2})-B{}_{y}(C_{x}^{2}+C_{y}^{2}))/D'$
+\begin_inset Formula $(C{}_{y}(B_{x}^{2}+B_{y}^{2})-B{}_{y}(C_{x}^{2}+C_{y}^{2}))/D$
 \end_inset
 
  and 
