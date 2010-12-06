@@ -32,6 +32,11 @@
 \vspace{1mm}
 \textbf{#1}
 }
+\newcommand{\TopicCode}[1]{
+\vspace{1mm}
+\textbf{#1}
+\vspace{-4mm}
+}
 \end_preamble
 \use_default_options false
 \language english
@@ -175,7 +180,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -212,7 +217,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -3775,7 +3780,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -3812,7 +3817,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -3849,7 +3854,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -3886,7 +3891,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -3923,7 +3928,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -3960,7 +3965,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5410,7 +5415,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5451,7 +5456,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5488,7 +5493,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5525,7 +5530,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5562,7 +5567,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5599,7 +5604,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5636,7 +5641,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5673,7 +5678,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5710,7 +5715,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5774,7 +5779,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5811,7 +5816,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5848,7 +5853,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5885,7 +5890,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5908,6 +5913,43 @@ status open
 \begin_inset CommandInset include
 LatexCommand verbatiminput
 filename "src/string/LIS.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+TopicCode{
+\end_layout
+
+\end_inset
+
+Permutation index
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/string/perm_index.cpp"
 
 \end_inset
 
@@ -5949,7 +5991,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -5986,7 +6028,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -6023,7 +6065,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -6060,7 +6102,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -6097,7 +6139,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -6134,7 +6176,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -6171,7 +6213,7 @@ status open
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -6811,7 +6853,7 @@ Section{
 
 \end_inset
 
-Games theory (Grundy,Misère)
+Games theory (Grundy, Misère)
 \begin_inset ERT
 status open
 
@@ -7002,20 +7044,20 @@ status open
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-Section{
+TopicCode{
 \end_layout
 
 \end_inset
 
-Geometry
+Geodistance
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7028,8 +7070,18 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/geom/geodist.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7042,7 +7094,7 @@ Topic{
 
 Pick's theorem
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7109,7 +7161,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7122,7 +7174,7 @@ Topic{
 
 Line
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7243,14 +7295,45 @@ status collapsed
 \begin_inset Newline newline
 \end_inset
 
- Point-line segment distance: 
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+TopicCode{
+\end_layout
+
+\end_inset
+
+Point-line segment distance:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/geom/linesegdist.cpp"
+
+\end_inset
+
+
 \size small
-TODO 
+ 
 \end_layout
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7263,7 +7346,7 @@ Topic{
 
 Projection
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7319,7 +7402,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7332,7 +7415,7 @@ Topic{
 
 Segment-segment intersection
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7369,20 +7452,20 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
 
 Circle-circle and circle-line intersection
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7396,56 +7479,18 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/geom/circintersect.cpp"
 
-\size small
-TODO
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-Topic{
-\end_layout
-
-\end_inset
-
-Circle from 3 points (circumcircle)
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-.
- Intersect two perpendicular bisectors.
- Line perpendicular to 
-\begin_inset Formula $ax+by=c$
-\end_inset
-
- has the form 
-\begin_inset Formula $-bx+ay=d$
-\end_inset
-
-.
- Find 
-\begin_inset Formula $d$
-\end_inset
-
- by substituting midpoint's coordinates.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7458,7 +7503,7 @@ Topic{
 
 Angular bisector
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7526,7 +7571,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7539,7 +7584,7 @@ Topic{
 
 Counter-clockwise rotation around the origin
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7572,7 +7617,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7585,7 +7630,7 @@ Topic{
 
 3D rotation
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7611,7 +7656,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7624,7 +7669,7 @@ Topic{
 
 Plane equation from 3 points
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7651,7 +7696,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7664,7 +7709,7 @@ Topic{
 
 3D figures
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -7917,13 +7962,13 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
@@ -7943,9 +7988,13 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/geom/convexhull.cpp"
 
-\size small
-TODO
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8342,7 +8391,7 @@ Section{
 
 \end_inset
 
-Appendices (ASCII table)
+Appendices (ASCII table, binary search)
 \begin_inset ERT
 status open
 
@@ -8369,20 +8418,20 @@ status open
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-Topic{
+TopicCode{
 \end_layout
 
 \end_inset
 
-Days of week
+Binary search
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -8391,105 +8440,13 @@ status collapsed
 
 \end_inset
 
- 
-\begin_inset Newline newline
-\end_inset
-
- 
-\begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="3">
-<features>
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-January 1, 1600: Saturday 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-January 1, 1900: Monday 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-June 13, 2042: Friday 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-January 1, 2008: Tuesday 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-April 1, 2008: Tuesday 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-April 9, 2008: Wednesday 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-December 31, 1999: Friday 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-January 1, 3000: Wednesday 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="none" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 
 \end_layout
 
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/bsearch.cpp"
 
 \end_inset
 

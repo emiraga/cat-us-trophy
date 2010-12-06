@@ -32,11 +32,6 @@
 \vspace{1mm}
 \textbf{#1}
 }
-\newcommand{\TopicCode}[1]{
-\vspace{1mm}
-\textbf{#1}
-\vspace{-4mm}
-}
 \end_preamble
 \use_default_options false
 \language english
@@ -180,7 +175,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -217,7 +212,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -3780,7 +3775,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -3817,7 +3812,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -3854,7 +3849,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -3891,7 +3886,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -3928,7 +3923,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -3965,7 +3960,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5415,7 +5410,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5456,7 +5451,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5493,7 +5488,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5530,7 +5525,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5567,7 +5562,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5604,7 +5599,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5641,7 +5636,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5678,7 +5673,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5715,7 +5710,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5779,7 +5774,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5816,7 +5811,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5853,7 +5848,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5890,7 +5885,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5927,7 +5922,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -5991,7 +5986,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -6028,7 +6023,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -6065,7 +6060,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -6102,7 +6097,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -6139,7 +6134,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -6176,7 +6171,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -6213,7 +6208,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -7050,7 +7045,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -7295,31 +7290,7 @@ status open
 \begin_inset Newline newline
 \end_inset
 
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-TopicCode{
-\end_layout
-
-\end_inset
-
-Point-line segment distance:
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
+ Point-line segment distance:
 \begin_inset CommandInset include
 LatexCommand verbatiminput
 filename "src/geom/linesegdist.cpp"
@@ -7458,7 +7429,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset
@@ -7479,13 +7450,51 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand verbatiminput
-filename "src/geom/circintersect.cpp"
+
+\size small
+TODO
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
 
 \end_inset
 
+Circle from 3 points (circumcircle)
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Intersect two perpendicular bisectors.
+ Line perpendicular to 
+\begin_inset Formula $ax+by=c$
+\end_inset
+
+ has the form 
+\begin_inset Formula $-bx+ay=d$
+\end_inset
+
+.
+ Find 
+\begin_inset Formula $d$
+\end_inset
+
+ by substituting midpoint's coordinates.
 \end_layout
 
 \begin_layout Standard
@@ -8424,7 +8433,7 @@ status open
 
 
 \backslash
-TopicCode{
+Topic{
 \end_layout
 
 \end_inset

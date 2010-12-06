@@ -1,0 +1,134 @@
+snippet structVec
+	//vector class, also used as a point
+	template<int d=2, class T=LD> struct Vec
+	{
+		T c[d];
+		//Vec(){ Rep(i,d) c[i]=0; }
+		//Vec(T input[]) { Rep(i,d) c[i]=input[i]; } //convert from array
+		//Vec(vector<T> input) { Rep(i,d) c[i]=input[i]; } //convert from vector
+		
+		//Vec(T a1, T a2){assert(d==2); c[0]=a1;c[1]=a2; }//2d constructor
+		//Vec(T a1, T a2, T a3){assert(d==3); c[0]=a1;c[1]=a2;c[2]=a3; }//3d constructor
+		
+		//T& operator[](int dim) { return c[dim]; } //component
+		//T operator[](int dim) const { return c[dim]; } //constant component
+	
+		//Vec operator+(const Vec &a)const{ Vec r; Rep(i,d) r[i]=c[i]+a[i]; return r;}//addition
+		//Vec operator-(const Vec &a)const{ Vec r; Rep(i,d) r[i]=c[i]-a[i]; return r;}//subtraction
+		//T operator*(const Vec &a)const{ T r=0; Rep(i,d) r+=a[i]*c[i]; return r;}//dot product
+		//Vec operator*(T a)const{ Vec r; Rep(i,d) r[i]=c[i]*a; return r;}//scale vector
+	
+		//T len()const { T r=0; Rep(i,d) r+=c[i]*c[i]; return sqrt(r);}//length of vector
+		//friend ostream& operator<<(ostream &os, const Vec &a){Rep(i,d){if(i)os<<" ";os<<a[i];}return os;}//output
+	
+		//T operator%(const Vec<2> &a)const{assert(d==2);return c[0]*a[1]-c[1]*a[0]; }//2d cross product
+		//Vec operator%(const Vec<3> &a)const{assert(d==3);return Vec(c[1]*a[2]-c[2]*a[1],c[2]*a[0]-c[0]*a[2],c[0]*a[1]-c[1]*a[0]);}//3d cross
+		
+		//Vec rotate(LD angle) {assert(d==2);return Vec(c[0]*cos(angle)-c[1]*sin(angle),c[0]*sin(angle)+c[1]*cos(angle));}
+		//bool operator<(const Vec &v)const{ Rep(i,d)if(c[i]!=v[i])return c[i]<v[i];return false; }
+	};
+
+snippet linePointDist
+	LD linePointDist(Vec<> A, Vec<> B, Vec<> C, bool isSegment){
+		LD dist = ((B-A)%(C-A)) / sqrt((B-A)*(B-A));
+		if(isSegment){
+			if( (C-B)*(B-A) > eps) return (B-C).len();
+			if( (C-A)*(A-B) > eps) return (A-C).len();
+		}
+		return iabs(dist);
+	}
+
+snippet segmentsIntersect
+	bool segmentsIntersect( Vec<> A, Vec<> B, Vec<> C, Vec<> E )
+	{
+		Vec<> in = Line<>(A,B).intersect(Line<>(C,E));
+		return linePointDist(A,B,in,true) < eps && linePointDist(C,E,in,true) < eps;
+	}
+
+snippet areaOfPolygon
+	template<class T> T twoarea(vector< Vec<2,T> > p)
+	{
+		T ret=p[p.sz-1]%p[0];
+		Rep(i,p.sz-1) ret += p[i]%p[i+1];
+		return ret;
+	}
+	
+snippet structLine
+	template<class T=LD> struct Line
+	{
+		T A,B,C;
+		Line(){A=B=C=0;}
+		//Line(T x1,T y1,T x2,T y2) { A=y2-y1; B=x1-x2; C=A*x1+B*y1; }//construct from 4 values
+		//T dist(T a0, T a1) const { return iabs( a0*A + a1*B - C ) / sqrt(A*A+B*B); }
+		//Line rot90(T x,T y)const{Line ret;ret.A=-B;ret.B=A;ret.C=ret.A*x+ret.B*y;return ret;}//rot line
+		//friend ostream& operator<<(ostream& os,const Line &a){return os<<a.A<<"*x + "<<a.B<<"*y = "<<a.C; }
+	
+		//requires Vec
+		//Line(Vec<2,T>a,Vec<2,T>b){A=b[1]-a[1];B=a[0]-b[0];C=A*a[0]+B*a[1];} //construct from two points
+		//T dist(Vec<2,T> a) const { return ( a[0]*A + a[1]*B - C ) / sqrt(A*A+B*B); }
+		//Vec<2,T> intersect(const Line &l) const {T det = A*l.B - l.A*B; if(iabs(det) < eps)det = 0; return Vec<2,T>((l.B*C - B*l.C)/det, (A*l.C - l.A*C)/det); }
+	};
+	//for segment segment intersection, check additionally
+	//min(x1,x2) <= x <= max(x1,x2)
+
+snippet getMidLine
+	// get a line passing between two points
+	template<class T>
+	Line<T> getmidline(Vec<2,T> a, Vec<2,T> b)
+	{
+		Vec<2,T> mid(a+b);
+		return Line<T>(a,b).rot90(mid[0]/2,mid[1]/2);
+	}
+
+snippet reflectPoint
+	//reflect a point into it's "mirror" with repect to a line
+	template<class T>
+	Vec<2,T> reflectPoint(Vec<2,T> p, Line<T> l)
+	{
+		Line<T> r = l.rot90(p[0],p[1]);
+		Vec<2,T> Y=l.intersect(r);
+		return Y - (p-Y);
+	}
+
+snippet convexHull
+	// Returns a list of points on the convex hull in counter-clockwise order.
+	// Note: the last point in the returned list is NOT the same as the first one. Because of (k-1)
+	template<class T>
+	vector< Vec<2,T> > convexHull(vector<Vec<2,T> > P)
+	{
+		int n = P.size(), k = 0;
+		vector< Vec<2,T> > H(2*n);
+		sort(P.begin(), P.end());
+		// Build lower hull
+		for (int i = 0; i < n; i++) {
+			while (k >= 2 && (H[k-2] - H[k-1]) % (H[k-2] - P[i]) <= 0) k--;
+			H[k++] = P[i];
+		}
+		// Build upper hull
+		for (int i = n-2, t = k+1; i >= 0; i--) {
+			while (k >= t && (H[k-2] - H[k-1]) % (H[k-2] - P[i]) <= 0) k--;
+			H[k++] = P[i];
+		}
+		H.resize( k-1 );//k-1 to remove last point (duplicate)
+		return H;
+	}
+
+snippet things_to_add
+	int crossOper(double x0,double y0,double x1,double y1,double x2,double y2)
+	{
+		double t=(x1-x0)*(y2-y0)-(x2-x0)*(y1-y0);
+		if (fabs(t)<=eps)
+			return 0;
+		return (t<0)?-1:1;
+	}
+	bool isIntersect(double x1,double y1,double x2,double y2,double x3,double y3,double x4,double y4)
+	{
+		return 
+			crossOper(x1,y1,x2,y2,x3,y3)*crossOper(x1,y1,x2,y2,x4,y4)<0 
+		&& 
+			crossOper(x3,y3,x4,y4,x1,y1)*crossOper(x3,y3,x4,y4,x2,y2)<0;
+	}
+	bool isMiddle(double s,double m,double t)
+	{
+		return fabs(s-m)<=eps || fabs(t-m)<=eps || (s<m)!=(t<m);
+	}
