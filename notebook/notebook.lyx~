@@ -3061,6 +3061,78 @@ status open
 \end_layout
 
 \begin_layout Standard
+Number of ways to pick a multiset of size 
+\begin_inset Formula $k$
+\end_inset
+
+ from 
+\begin_inset Formula $n$
+\end_inset
+
+ elements: 
+\begin_inset Formula ${n+k-1 \choose k}$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Number of 
+\begin_inset Formula $n$
+\end_inset
+
+-tuples of non-negative integers with sum 
+\begin_inset Formula $s$
+\end_inset
+
+: 
+\begin_inset Formula ${{s+n-1} \choose {n-1}}$
+\end_inset
+
+, at most 
+\begin_inset Formula $s$
+\end_inset
+
+: 
+\begin_inset Formula ${{s+n} \choose {n}}$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Number of 
+\begin_inset Formula $n$
+\end_inset
+
+-tuples of positive integers with sum 
+\begin_inset Formula $s$
+\end_inset
+
+: 
+\begin_inset Formula ${{s-1} \choose {n-1}}$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Number of lattice paths from 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ to 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+, restricted to east and north steps: 
+\begin_inset Formula ${a+b \choose a}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3144,7 +3216,7 @@ status open
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3157,7 +3229,7 @@ Topic{
 
 Derangements
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3193,7 +3265,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3210,7 +3282,7 @@ Stirling numbers of
 
  kind
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3258,7 +3330,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3275,7 +3347,7 @@ Stirling numbers of
 
  kind
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3312,7 +3384,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3601,6 +3673,80 @@ status open
 
 
 \backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Burnside's lemma
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ The number of orbits under group 
+\begin_inset Formula $G$
+\end_inset
+
+'s action on set 
+\begin_inset Formula $X$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Formula $|X/G|=\frac{1}{|G|}\sum_{g\in G}|X_{g}|$
+\end_inset
+
+, where 
+\begin_inset Formula $X_{g}=\{x\in X:g(x)=x\}$
+\end_inset
+
+.
+ (
+\begin_inset Quotes eld
+\end_inset
+
+Average number of fixed points.
+\begin_inset Quotes erd
+\end_inset
+
+) 
+\begin_inset Newline newline
+\end_inset
+
+ Let 
+\begin_inset Formula $w(x)$
+\end_inset
+
+ be weight of 
+\begin_inset Formula $x$
+\end_inset
+
+'s orbit.
+ Sum of all orbits' weights: 
+\begin_inset Formula $\sum_{o\in X/G}w(o)=\frac{1}{|G|}\sum_{g\in G}\sum_{x\in X_{g}}w(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 Section{
 \end_layout
 
@@ -3856,7 +4002,7 @@ Section{
 
 \end_inset
 
-Number theory
+Number theory (*gcd, totient, sieve, modexp, rabinmiller)
 \begin_inset ERT
 status open
 
@@ -3868,6 +4014,1392 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Linear diophantine equation
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $ax+by=c$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $d=\gcd(a,b)$
+\end_inset
+
+.
+ A solution exists iff 
+\begin_inset Formula $d|c$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $(x_{0},y_{0})$
+\end_inset
+
+ is any solution, then all solutions are given by 
+\begin_inset Formula $(x,y)=(x_{0}+\frac{b}{d}t,y_{0}-\frac{a}{d}t)$
+\end_inset
+
+, 
+\begin_inset Formula $t\in{\mathbb{Z}}$
+\end_inset
+
+.
+ To find some solution 
+\begin_inset Formula $(x_{0},y_{0})$
+\end_inset
+
+, use extended GCD to solve 
+\begin_inset Formula $ax_{0}+by_{0}=d=\gcd(a,b)$
+\end_inset
+
+, and multiply its solutions by 
+\begin_inset Formula $\frac{c}{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Linear diophantine equation in 
+\begin_inset Formula $n$
+\end_inset
+
+ variables: 
+\begin_inset Formula $a_{1}x_{1}+\dots+a_{n}x_{n}=c$
+\end_inset
+
+ has solutions iff 
+\begin_inset Formula $\gcd(a_{1},\dots,a_{n})|c$
+\end_inset
+
+.
+ To find some solution, let 
+\begin_inset Formula $b=\gcd(a_{2},\dots,a_{n})$
+\end_inset
+
+, solve 
+\begin_inset Formula $a_{1}x_{1}+by=c$
+\end_inset
+
+, and iterate with 
+\begin_inset Formula $a_{2}x_{2}+\dots=y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Multiplicative inverse of 
+\begin_inset Formula $a$
+\end_inset
+
+ modulo 
+\begin_inset Formula $m$
+\end_inset
+
+: 
+\begin_inset Formula $x$
+\end_inset
+
+ in 
+\begin_inset Formula $ax+my=1$
+\end_inset
+
+, or 
+\begin_inset Formula $a^{\phi(m)-1}\pmod{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Chinese Remainder Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ System 
+\begin_inset Formula $x\equiv a_{i}\pmod{m_{i}}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,\dots,n$
+\end_inset
+
+, with pairwise relatively-prime 
+\begin_inset Formula $m_{i}$
+\end_inset
+
+ has a unique solution modulo 
+\begin_inset Formula $M=m_{1}m_{2}\dots m_{n}$
+\end_inset
+
+: 
+\begin_inset Formula $x=a_{1}b_{1}\frac{M}{m_{1}}+\dots+a_{n}b_{n}\frac{M}{m_{n}}\pmod{M}$
+\end_inset
+
+, where 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ is modular inverse of 
+\begin_inset Formula $\frac{M}{m_{i}}$
+\end_inset
+
+ modulo 
+\begin_inset Formula $m_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+System 
+\begin_inset Formula $x\equiv a\pmod{m}$
+\end_inset
+
+, 
+\begin_inset Formula $x\equiv b\pmod{n}$
+\end_inset
+
+ has solutions iff 
+\begin_inset Formula $a\equiv b\pmod{g}$
+\end_inset
+
+, where 
+\begin_inset Formula $g=\gcd(m,n)$
+\end_inset
+
+.
+ The solution is unique modulo 
+\begin_inset Formula $L=\frac{mn}{g}$
+\end_inset
+
+, and equals: 
+\begin_inset Formula $x\equiv a+T(b-a)m/g\equiv b+S(a-b)n/g\pmod{L}$
+\end_inset
+
+, where 
+\begin_inset Formula $S$
+\end_inset
+
+ and 
+\begin_inset Formula $T$
+\end_inset
+
+ are integer solutions of 
+\begin_inset Formula $mT+nS=\gcd(m,n)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Prime-counting function
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $\pi(n)=|\{p\le n:p\hbox{isprime}\}|$
+\end_inset
+
+.
+ 
+\begin_inset Formula $n/\ln(n)<\pi(n)<1.3n/\ln(n)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\pi(1000)=168$
+\end_inset
+
+, 
+\begin_inset Formula $\pi(10^{6})=78498$
+\end_inset
+
+, 
+\begin_inset Formula $\pi(10^{9})=50\ 847\ 534$
+\end_inset
+
+.
+ 
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Formula $n$
+\end_inset
+
+-th prime 
+\begin_inset Formula $\approx n\ln n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Miller-Rabin's primality test
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Given 
+\begin_inset Formula $n=2^{r}s+1$
+\end_inset
+
+ with odd 
+\begin_inset Formula $s$
+\end_inset
+
+, and a random integer 
+\begin_inset Formula $1<a<n$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ If 
+\begin_inset Formula $a^{s}\equiv1{\pmod n}$
+\end_inset
+
+ or 
+\begin_inset Formula $a^{2^{j}s}\equiv-1{\pmod n}$
+\end_inset
+
+ for some 
+\begin_inset Formula $0\le j\le r-1$
+\end_inset
+
+, then 
+\begin_inset Formula $n$
+\end_inset
+
+ is a probable prime.
+ With bases 2, 7 and 61, the test indentifies all composites below 
+\begin_inset Formula $2^{32}$
+\end_inset
+
+.
+ Probability of failure for a random 
+\begin_inset Formula $a$
+\end_inset
+
+ is at most 1/4.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Pollard-
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Choose random 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+, and let 
+\begin_inset Formula $x_{i+1}=x_{i}^{2}-1\pmod{n}$
+\end_inset
+
+.
+ Test 
+\begin_inset Formula $\gcd(n,x_{2^{k}+i}-x_{2^{k}})$
+\end_inset
+
+ as possible 
+\begin_inset Formula $n$
+\end_inset
+
+'s factors for 
+\begin_inset Formula $k=0,1,\ldots$
+\end_inset
+
+ Expected time to find a factor: 
+\begin_inset Formula $O(\sqrt{m})$
+\end_inset
+
+, where 
+\begin_inset Formula $m$
+\end_inset
+
+ is smallest prime power in 
+\begin_inset Formula $n$
+\end_inset
+
+'s factorization.
+ That's 
+\begin_inset Formula $O(n^{1/4})$
+\end_inset
+
+ if you check 
+\begin_inset Formula $n=p^{k}$
+\end_inset
+
+ as a special case before factorization.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Fermat primes
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ A Fermat prime is a prime of form 
+\begin_inset Formula $2^{2^{n}}+1$
+\end_inset
+
+.
+ The only known Fermat primes are 3, 5, 17, 257, 65537.
+ A number of form 
+\begin_inset Formula $2^{n}+1$
+\end_inset
+
+ is prime only if it is a Fermat prime.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Perfect numbers
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $n>1$
+\end_inset
+
+ is called perfect if it equals sum of its proper divisors and 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ Even 
+\begin_inset Formula $n$
+\end_inset
+
+ is perfect iff 
+\begin_inset Formula $n=2^{p-1}(2^{p}-1)$
+\end_inset
+
+ and 
+\begin_inset Formula $2^{p}-1$
+\end_inset
+
+ is prime (Mersenne's).
+ No odd perfect numbers are yet found.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Carmichael numbers
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ A positive composite 
+\begin_inset Formula $n$
+\end_inset
+
+ is a Carmichael number (
+\begin_inset Formula $a^{n-1}\equiv1\pmod{n}$
+\end_inset
+
+ for all 
+\begin_inset Formula $a$
+\end_inset
+
+: 
+\begin_inset Formula $\gcd(a,n)=1$
+\end_inset
+
+), iff 
+\begin_inset Formula $n$
+\end_inset
+
+ is square-free, and for all prime divisors 
+\begin_inset Formula $p$
+\end_inset
+
+ of 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula $p-1$
+\end_inset
+
+ divides 
+\begin_inset Formula $n-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Number/sum of divisors
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $\tau(p_{1}^{a_{1}}\dots p_{k}^{a_{k}})=\prod_{j=1}^{k}(a_{j}+1)$
+\end_inset
+
+.
+ 
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Formula $\sigma(p_{1}^{a_{1}}\dots p_{k}^{a_{k}})=\prod_{j=1}^{k}\frac{p_{j}^{a_{j}+1}-1}{p_{j}-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Euler's phi function
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $\phi(n)=|\{m\in{\mathbb{N}},m\le n,\gcd(m,n)=1\}|$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Formula $\phi(mn)=\frac{\phi(m)\phi(n)\gcd(m,n)}{\phi(\gcd(m,n))}$
+\end_inset
+
+.
+ 
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Formula $\phi(p^{a})=p^{a-1}(p-1)$
+\end_inset
+
+.
+ 
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Formula $\sum_{d|n}\phi(d)=\sum_{d|n}\phi(\frac{n}{d})=n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Euler's theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $a^{\phi(n)}\equiv1\pmod{n}$
+\end_inset
+
+, if 
+\begin_inset Formula $\gcd(a,n)=1$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Wilson's theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $p$
+\end_inset
+
+ is prime iff 
+\begin_inset Formula $(p-1)!\equiv-1\pmod p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Mobius function
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mu(1)=1$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mu(n)=0$
+\end_inset
+
+, if 
+\begin_inset Formula $n$
+\end_inset
+
+ is not squarefree.
+ 
+\begin_inset Formula $\mu(n)=(-1)^{s}$
+\end_inset
+
+, if 
+\begin_inset Formula $n$
+\end_inset
+
+ is the product of 
+\begin_inset Formula $s$
+\end_inset
+
+ distinct primes.
+ Let 
+\begin_inset Formula $f$
+\end_inset
+
+, 
+\begin_inset Formula $F$
+\end_inset
+
+ be functions on positive integers.
+ If for all 
+\begin_inset Formula $n\in N$
+\end_inset
+
+, 
+\begin_inset Formula $F(n)=\sum_{d|n}f(d)$
+\end_inset
+
+, then 
+\begin_inset Formula $f(n)=\sum_{d|n}\mu(d)F(\frac{n}{d})$
+\end_inset
+
+, and vice versa.
+ 
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Formula $\phi(n)=\sum_{d|n}\mu(d)\frac{n}{d}$
+\end_inset
+
+.
+ 
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Formula $\sum_{d|n}\mu(d)=1$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is multiplicative, then 
+\begin_inset Formula $\sum_{d|n}\mu(d)f(d)=\prod_{p|n}(1-f(p))$
+\end_inset
+
+, 
+\begin_inset Formula $\sum_{d|n}\mu(d)^{2}f(d)=\prod_{p|n}(1+f(p))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Legendre symbol
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ If 
+\begin_inset Formula $p$
+\end_inset
+
+ is an odd prime, 
+\begin_inset Formula $a\in{\mathbb{Z}}$
+\end_inset
+
+, then 
+\begin_inset Formula $\left(\frac{a}{p}\right)$
+\end_inset
+
+ equals 
+\begin_inset Formula $0$
+\end_inset
+
+, if 
+\begin_inset Formula $p|a$
+\end_inset
+
+; 
+\begin_inset Formula $1$
+\end_inset
+
+ if 
+\begin_inset Formula $a$
+\end_inset
+
+ is a quadratic residue modulo 
+\begin_inset Formula $p$
+\end_inset
+
+; and 
+\begin_inset Formula $-1$
+\end_inset
+
+ otherwise.
+ Euler's criterion: 
+\begin_inset Formula $\left(\frac{a}{p}\right)=a^{\left(\frac{p-1}{2}\right)}\pmod p$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Jacobi symbol
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ If 
+\begin_inset Formula $n=p_{1}^{a_{1}}\cdots p_{k}^{a_{k}}$
+\end_inset
+
+ is odd, then 
+\begin_inset Formula $\left(\frac{a}{n}\right)=\prod_{i=1}^{k}\left(\frac{a}{p_{i}}\right)^{k_{i}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Primitive roots
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ If the order of 
+\begin_inset Formula $g$
+\end_inset
+
+ modulo 
+\begin_inset Formula $m$
+\end_inset
+
+ (min 
+\begin_inset Formula $n>0$
+\end_inset
+
+: 
+\begin_inset Formula $g^{n}\equiv1\pmod{m}$
+\end_inset
+
+) is 
+\begin_inset Formula $\phi(m)$
+\end_inset
+
+, then 
+\begin_inset Formula $g$
+\end_inset
+
+ is called a primitive root.
+ If 
+\begin_inset Formula $Z_{m}$
+\end_inset
+
+ has a primitive root, then it has 
+\begin_inset Formula $\phi(\phi(m))$
+\end_inset
+
+ distinct primitive roots.
+ 
+\begin_inset Formula $Z_{m}$
+\end_inset
+
+ has a primitive root iff 
+\begin_inset Formula $m$
+\end_inset
+
+ is one of 
+\begin_inset Formula $2$
+\end_inset
+
+, 
+\begin_inset Formula $4$
+\end_inset
+
+, 
+\begin_inset Formula $p^{k}$
+\end_inset
+
+, 
+\begin_inset Formula $2p^{k}$
+\end_inset
+
+, where 
+\begin_inset Formula $p$
+\end_inset
+
+ is an odd prime.
+ If 
+\begin_inset Formula $Z_{m}$
+\end_inset
+
+ has a primitive root 
+\begin_inset Formula $g$
+\end_inset
+
+, then for all 
+\begin_inset Formula $a$
+\end_inset
+
+ coprime to 
+\begin_inset Formula $m$
+\end_inset
+
+, there exists unique integer 
+\begin_inset Formula $i=\text{ind}_{g}(a)$
+\end_inset
+
+ modulo 
+\begin_inset Formula $\phi(m)$
+\end_inset
+
+, such that 
+\begin_inset Formula $g^{i}\equiv a\pmod{m}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\text{ind}_{g}(a)$
+\end_inset
+
+ has logarithm-like properties: 
+\begin_inset Formula $\text{ind}(1)=0$
+\end_inset
+
+, 
+\begin_inset Formula $\text{ind}(ab)=\text{ind}(a)+\text{ind}(b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $p$
+\end_inset
+
+ is prime and 
+\begin_inset Formula $a$
+\end_inset
+
+ is not divisible by 
+\begin_inset Formula $p$
+\end_inset
+
+, then congruence 
+\begin_inset Formula $x^{n}\equiv a\pmod{p}$
+\end_inset
+
+ has 
+\begin_inset Formula $\gcd(n,p-1)$
+\end_inset
+
+ solutions if 
+\begin_inset Formula $a^{(p-1)/\gcd(n,p-1)}\equiv1\pmod{p}$
+\end_inset
+
+, and no solutions otherwise.
+ (Proof sketch: let 
+\begin_inset Formula $g$
+\end_inset
+
+ be a primitive root, and 
+\begin_inset Formula $g^{i}\equiv a\pmod{p}$
+\end_inset
+
+, 
+\begin_inset Formula $g^{u}\equiv x\pmod{p}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $x^{n}\equiv a\pmod{p}$
+\end_inset
+
+ iff 
+\begin_inset Formula $g^{nu}\equiv g^{i}\pmod{p}$
+\end_inset
+
+ iff 
+\begin_inset Formula $nu\equiv i\pmod{p}$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Discrete logarithm problem
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Find 
+\begin_inset Formula $x$
+\end_inset
+
+ from 
+\begin_inset Formula $a^{x}\equiv b\pmod{m}$
+\end_inset
+
+.
+ Can be solved in 
+\begin_inset Formula $O(\sqrt{m})$
+\end_inset
+
+ time and space with a meet-in-the-middle trick.
+ Let 
+\begin_inset Formula $n=\lceil\sqrt{m}\rceil$
+\end_inset
+
+, and 
+\begin_inset Formula $x=ny-z$
+\end_inset
+
+.
+ Equation becomes 
+\begin_inset Formula $a^{ny}\equiv ba^{z}\pmod{m}$
+\end_inset
+
+.
+ Precompute all values that the RHS can take for 
+\begin_inset Formula $z=0,1,\dots,n-1$
+\end_inset
+
+, and brute force 
+\begin_inset Formula $y$
+\end_inset
+
+ on the LHS, each time checking whether there's a corresponding value for
+ RHS.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Pythagorean triples
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Integer solutions of 
+\begin_inset Formula $x^{2}+y^{2}=z^{2}$
+\end_inset
+
+ All relatively prime triples are given by: 
+\begin_inset Formula $x=2mn,y=m^{2}-n^{2},z=m^{2}+n^{2}$
+\end_inset
+
+ where 
+\begin_inset Formula $m>n,\gcd(m,n)=1$
+\end_inset
+
+ and 
+\begin_inset Formula $m\not\equiv n\pmod{2}$
+\end_inset
+
+.
+ All other triples are multiples of these.
+ Equation 
+\begin_inset Formula $x^{2}+y^{2}=2z^{2}$
+\end_inset
+
+ is equivalent to 
+\begin_inset Formula $(\frac{x+y}{2})^{2}+(\frac{x-y}{2})^{2}=z^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Postage stamps/McNuggets problem
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $a$
+\end_inset
+
+, 
+\begin_inset Formula $b$
+\end_inset
+
+ be relatively-prime integers.
+ There are exactly 
+\begin_inset Formula $\frac{1}{2}(a-1)(b-1)$
+\end_inset
+
+ numbers 
+\emph on
+not
+\emph default
+ of form 
+\begin_inset Formula $ax+by$
+\end_inset
+
+ (
+\begin_inset Formula $x,y\ge0$
+\end_inset
+
+), and the largest is 
+\begin_inset Formula $(a-1)(b-1)-1=ab-a-b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Fermat's two-squares theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Odd prime 
+\begin_inset Formula $p$
+\end_inset
+
+ can be represented as a sum of two squares iff 
+\begin_inset Formula $p\equiv1{\pmod4}$
+\end_inset
+
+.
+ A product of two sums of two squares is a sum of two squares.
+ Thus, 
+\begin_inset Formula $n$
+\end_inset
+
+ is a sum of two squares iff every prime of form 
+\begin_inset Formula $p=4k+3$
+\end_inset
+
+ occurs an even number of times in 
+\begin_inset Formula $n$
+\end_inset
+
+'s factorization.
 \end_layout
 
 \begin_layout Standard
@@ -4072,7 +5604,7 @@ Topic{
 
 \end_inset
 
-Power iterative - expmod
+Power iterative - modexp
 \begin_inset ERT
 status open
 
@@ -4339,6 +5871,43 @@ status open
 \begin_inset CommandInset include
 LatexCommand verbatiminput
 filename "src/string/kmp.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Longest Increasing Subsequence
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/string/LIS.cpp"
 
 \end_inset
 
@@ -4639,12 +6208,610 @@ status open
 
 
 \backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Euler's theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ For any planar graph, 
+\begin_inset Formula $V-E+F=1+C$
+\end_inset
+
+, where 
+\begin_inset Formula $V$
+\end_inset
+
+ is the number of graph's vertices, 
+\begin_inset Formula $E$
+\end_inset
+
+ is the number of edges, 
+\begin_inset Formula $F$
+\end_inset
+
+ is the number of faces in graph's planar drawing, and 
+\begin_inset Formula $C$
+\end_inset
+
+ is the number of connected components.
+ Corollary: 
+\begin_inset Formula $V-E+F=2$
+\end_inset
+
+ for a 3D polyhedron.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Vertex covers and independent sets
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $M$
+\end_inset
+
+, 
+\begin_inset Formula $C$
+\end_inset
+
+, 
+\begin_inset Formula $I$
+\end_inset
+
+ be a max matching, a min vertex cover, and a max independent set.
+ Then 
+\begin_inset Formula $|M|\le|C|=N-|I|$
+\end_inset
+
+, with equality for bipartite graphs.
+ Complement of an MVC is always a MIS, and vice versa.
+ Given a bipartite graph with partitions 
+\begin_inset Formula $(A,B)$
+\end_inset
+
+, build a network: connect source to 
+\begin_inset Formula $A$
+\end_inset
+
+, and 
+\begin_inset Formula $B$
+\end_inset
+
+ to sink with edges of capacities, equal to the corresponding nodes' weights,
+ or 
+\begin_inset Formula $1$
+\end_inset
+
+ in the unweighted case.
+ Set capacities of the original graph's edges to the infinity.
+ Let 
+\begin_inset Formula $(S,T)$
+\end_inset
+
+ be a minimum 
+\begin_inset Formula $s$
+\end_inset
+
+-
+\begin_inset Formula $t$
+\end_inset
+
+ cut.
+ Then a maximum(-weighted) independent set is 
+\begin_inset Formula $I=(A\cap S)\cup(B\cap T)$
+\end_inset
+
+, and a minimum(-weighted) vertex cover is 
+\begin_inset Formula $C=(A\cap T)\cup(B\cap S)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Matrix-tree theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Let matrix 
+\begin_inset Formula $T=[t_{ij}]$
+\end_inset
+
+, where 
+\begin_inset Formula $t_{ij}$
+\end_inset
+
+ is the number of multiedges between 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+, for 
+\begin_inset Formula $i\ne j$
+\end_inset
+
+, and 
+\begin_inset Formula $t_{ii}=-\mbox{deg}_{i}$
+\end_inset
+
+.
+ Number of spanning trees of a graph is equal to the determinant of a matrix
+ obtained by deleting any 
+\begin_inset Formula $k$
+\end_inset
+
+-th row and 
+\begin_inset Formula $k$
+\end_inset
+
+-th column from 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Euler tours
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Euler tour in an undirected graph exists iff the graph is connected and
+ each vertex has an even degree.
+ Euler tour in a directed graph exists iff in-degree of each vertex equals
+ its out-degree, and underlying undirected graph is connected.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Stable marriages problem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ While there is a free man 
+\begin_inset Formula $m$
+\end_inset
+
+: let 
+\begin_inset Formula $w$
+\end_inset
+
+ be the most-preferred woman to whom he has not yet proposed, and propose
+ 
+\begin_inset Formula $m$
+\end_inset
+
+ to 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $w$
+\end_inset
+
+ is free, or is engaged to someone whom she prefers less than 
+\begin_inset Formula $m$
+\end_inset
+
+, match 
+\begin_inset Formula $m$
+\end_inset
+
+ with 
+\begin_inset Formula $w$
+\end_inset
+
+, else deny proposal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Stoer-Wagner's min-cut algorithm
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Start from a set 
+\begin_inset Formula $A$
+\end_inset
+
+ containing an arbitrary vertex.
+ While 
+\begin_inset Formula $A\ne V$
+\end_inset
+
+, add to 
+\begin_inset Formula $A$
+\end_inset
+
+ the most tightly connected vertex (
+\begin_inset Formula $z\notin A$
+\end_inset
+
+ such that 
+\begin_inset Formula $\sum_{x\in A}w(x,z)$
+\end_inset
+
+ is maximized.) Store cut-of-the-phase (the cut between the last added vertex
+ and rest of the graph), and merge the two vertices added last.
+ Repeat until the graph is contracted to a single vertex.
+ Minimum cut is one of the cuts-of-the-phase.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+2-SAT
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Build an implication graph with 2 vertices for each variable -- for the
+ variable and its inverse; for each clause 
+\begin_inset Formula $x\lor y$
+\end_inset
+
+ add edges 
+\begin_inset Formula $({\overline{x}},y)$
+\end_inset
+
+ and 
+\begin_inset Formula $({\overline{y}},x)$
+\end_inset
+
+.
+ The formula is satisfiable iff 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula ${\overline{x}}$
+\end_inset
+
+ are in distinct SCCs, for all 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ To find a satisfiable assignment, consider the graph's SCCs in topological
+ order from sinks to sources (i.e.
+ Kosaraju's last step), assigning `true' to all variables of the current
+ SCC (if it hasn't been previously assigned `false'), and `false' to all
+ inverses.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Randomized algorithm for non-bipartite matching
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $G$
+\end_inset
+
+ be a simple undirected graph with even 
+\begin_inset Formula $|V(G)|$
+\end_inset
+
+.
+ Build a matrix 
+\begin_inset Formula $A$
+\end_inset
+
+, which for each edge 
+\begin_inset Formula $(u,v)\in E(G)$
+\end_inset
+
+ has 
+\begin_inset Formula $A_{i,j}=x_{i,j}$
+\end_inset
+
+, 
+\begin_inset Formula $A_{j,i}=-x_{i,j}$
+\end_inset
+
+, and is zero elsewhere.
+ Tutte's theorem: 
+\begin_inset Formula $G$
+\end_inset
+
+ has a perfect matching iff 
+\begin_inset Formula $\det G$
+\end_inset
+
+ (a multivariate polynomial) is identically zero.
+ Testing the latter can be done by computing the determinant for a few random
+ values of 
+\begin_inset Formula $x_{i,j}$
+\end_inset
+
+'s over some field.
+ (e.g.
+ 
+\begin_inset Formula $Z_{p}$
+\end_inset
+
+ for a sufficiently large prime 
+\begin_inset Formula $p$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Prufer code of a tree
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Label vertices with integers 
+\begin_inset Formula $1$
+\end_inset
+
+ to 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ Repeatedly remove the leaf with the smallest label, and output its only
+ neighbor's label, until only one edge remains.
+ The sequence has length 
+\begin_inset Formula $n-2$
+\end_inset
+
+.
+ Two isomorphic trees have the same sequence, and every sequence of integers
+ from 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ corresponds to a tree.
+ Corollary: the number of labelled trees with 
+\begin_inset Formula $n$
+\end_inset
+
+ vertices is 
+\begin_inset Formula $n^{n-2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
+Erdos-Gallai theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ A sequence of integers 
+\begin_inset Formula $\{d_{1},d_{2},\dots,d_{n}\}$
+\end_inset
+
+, with 
+\begin_inset Formula $n-1\ge d_{1}\ge d_{2}\ge\dots\ge d_{n}\ge0$
+\end_inset
+
+ is a degree sequence of some undirected simple graph iff 
+\begin_inset Formula $\sum d_{i}$
+\end_inset
+
+ is even and 
+\begin_inset Formula $d_{1}+\dots+d_{k}\le k(k-1)+\sum_{i=k+1}^{n}\min(k,d_{i})$
+\end_inset
+
+ for all 
+\begin_inset Formula $k=1,2,\dots,n-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 Section{
 \end_layout
 
 \end_inset
 
-Misc (LIS)
+Games theory
 \begin_inset ERT
 status open
 
@@ -4671,7 +6838,7 @@ Topic{
 
 \end_inset
 
-Longest increasing subsequence
+Grundy numbers
 \begin_inset ERT
 status open
 
@@ -4682,17 +6849,85 @@ status open
 
 \end_inset
 
+.
+ For a two-player, normal-play (last to move wins) game on a graph 
+\begin_inset Formula $(V,E)$
+\end_inset
 
+: 
+\begin_inset Formula $G(x)=\mbox{mex}(\{G(y):(x,y)\in E\})$
+\end_inset
+
+, where 
+\begin_inset Formula $\mbox{mex}(S)=\min\{n\ge0:n\not\in S\}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ is losing iff 
+\begin_inset Formula $G(x)=0$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand verbatiminput
-filename "src/graph/mincost_maxflow.cpp"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
 
 \end_inset
 
+Misère Nim
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ A position with pile sizes 
+\begin_inset Formula $a_{1},a_{2},\dots,a_{n}\ge1$
+\end_inset
+
+, not all equal to 
+\begin_inset Formula $1$
+\end_inset
+
+, is losing iff 
+\begin_inset Formula $a_{1}\oplus a_{2}\oplus\dots\oplus a_{n}=0$
+\end_inset
+
+ (like in normal nim.) A position with 
+\begin_inset Formula $n$
+\end_inset
+
+ piles of size 
+\begin_inset Formula $1$
+\end_inset
+
+ is losing iff 
+\begin_inset Formula $n$
+\end_inset
+
+ is 
+\emph on
+odd
+\emph default
+.
 \end_layout
 
 \begin_layout Standard

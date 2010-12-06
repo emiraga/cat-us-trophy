@@ -48,9 +48,9 @@ void get_lcp(int n) {
 }   }
 //slower version of SA, also works with get_lcp
 struct data {
-    int nr[2],  p;
-    bool operator<(const data &v)const{return nr[0]<v.nr[0] || nr[0]==v.nr[0]&&nr[1]<v.nr[1];}
-    bool operator==(const data &v)const{return nr[1]==v.nr[1]&&nr[0]==v.nr[0];}
+int nr[2], p;
+bool operator<(const data &v)const{ return nr[0] < v.nr[0] || ...;}
+bool operator==(const data &v)const{return nr[1]==v.nr[1]&&nr[0]==v.nr[0];}
 } L[MAXN];
 int P[MAXLG+2][MAXN], pos[MAXN], rank[MAXN];
 int suffix_array(char *A, int N)
