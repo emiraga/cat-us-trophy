@@ -8482,7 +8482,7 @@ status open
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand verbatiminput
-filename "src/geom/cpp-geom.cpp"
+filename "src/geom/cpp-geom-cut.cpp"
 
 \end_inset
 
@@ -8502,7 +8502,7 @@ Section{
 
 \end_inset
 
-Appendices (Blossom, binary search, ASCII table)
+Appendices (LU, Blossom, binary search, ASCII table)
 \begin_inset ERT
 status open
 
@@ -8510,6 +8510,43 @@ status open
 
 }
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+TopicCode{
+\end_layout
+
+\end_inset
+
+LU decomposition
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/lu_system.cpp"
 
 \end_inset
 
