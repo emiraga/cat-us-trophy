@@ -8502,7 +8502,7 @@ Section{
 
 \end_inset
 
-Appendices (Treaps, ASCII table, binary search, )
+Appendices (Blossom, binary search, ASCII table)
 \begin_inset ERT
 status open
 
@@ -8510,6 +8510,43 @@ status open
 
 }
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+TopicCode{
+\end_layout
+
+\end_inset
+
+Blossoms
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "src/bsearch.cpp"
 
 \end_inset
 
