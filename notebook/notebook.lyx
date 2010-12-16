@@ -3683,6 +3683,106 @@ Topic{
 
 \end_inset
 
+Necklaces and bracelets
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ Necklace of length 
+\begin_inset Formula $n$
+\end_inset
+
+ is an equivalence class of n-character strings over an alphabet of size
+ 
+\begin_inset Formula $k$
+\end_inset
+
+, taking all rotations as equivalent.
+ Number of necklases: 
+\begin_inset Formula $N_{k}(n)=\frac{1}{n}\sum_{d\mid n}\varphi(d)k^{n/d}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bracelet is a necklace such that strings may also be equivalent under reflection.
+ Number of bracelets: 
+\begin_inset Formula $B_{k}(n)=\begin{cases}
+\frac{1}{2}N_{k}(n)+\frac{1}{4}(k+1)k^{n/2} & \text{if }n\text{ is even}\\
+\frac{1}{2}N_{k}(n)+\frac{1}{2}k^{(n+1)/2} & \text{if }n\text{ is odd}\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An aperiodic necklace of length 
+\begin_inset Formula $n$
+\end_inset
+
+ is an equivalence class of size 
+\begin_inset Formula $n$
+\end_inset
+
+, i.e., no two distinct rotations of a necklace from such class are equal.
+ Number of aperiodic necklaces: 
+\begin_inset Formula $M_{k}(n)=\frac{1}{n}\sum_{d\mid n}\mu(d)k^{n/d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Each aperiodic necklace contains a single Lyndon word.
+ Lyndon word is 
+\begin_inset Formula $n$
+\end_inset
+
+-character string over an alphabet of size 
+\begin_inset Formula $k$
+\end_inset
+
+, and which is the minimum element in the lexicographical ordering of all
+ its rotations.
+ 
+\begin_inset Formula $w=uv$
+\end_inset
+
+ is a Lyndon word if and only if 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $v$
+\end_inset
+
+ are Lyndon words and 
+\begin_inset Formula $u<v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Topic{
+\end_layout
+
+\end_inset
+
 Burnside's lemma
 \begin_inset ERT
 status open
@@ -3707,7 +3807,7 @@ status open
 \begin_inset Newline newline
 \end_inset
 
- 
+
 \begin_inset Formula $|X/G|=\frac{1}{|G|}\sum_{g\in G}|X_{g}|$
 \end_inset
 
@@ -4778,7 +4878,7 @@ status open
 \begin_inset Newline newline
 \end_inset
 
- 
+
 \begin_inset ERT
 status open
 
