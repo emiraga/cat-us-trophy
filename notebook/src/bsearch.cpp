@@ -1,6 +1,6 @@
-/*LE*/ int down = start, int up = end+1;
-while(down+1 < up) { int mid = (down+up)/2; if(f1(mid)) down = mid; else up = mid;
-} assert(down == L);
-/*GE*/ int down = start-1, int up = end;
-while(down+1 < up) { int mid = (down+up)/2; if(f2(mid)) up = mid; else down = mid;
-} assert(down+1 == L);
+/*LE*/
+while(l <= h){ m = (l+h) / 2; if(works(m))  l=m+1; else h=m-1; }
+return l-1;
+/*GE*/
+while(l <= h){ m = (l+h) / 2; if(works(m))  h=m-1; else l=m+1; }
+return h+1;
