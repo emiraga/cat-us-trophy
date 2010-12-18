@@ -4273,7 +4273,7 @@ Multiplicative inverse of
 \end_inset
 
 , or 
-\begin_inset Formula $a^{\phi(m)-1}\pmod{m}$
+\begin_inset Formula $a^{\varphi(m)-1}\pmod{m}$
 \end_inset
 
 .
@@ -4441,6 +4441,15 @@ status open
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+List of primes: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47,
+ 53, 59, 61, 67, 71
+\begin_inset Formula $\dots$
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4779,6 +4788,11 @@ status open
 \end_inset
 
 .
+ 
+\begin_inset Formula $\sigma_{x}(n)=\prod_{i=1}^{r}\frac{p_{i}^{(a_{i}+1)x}-1}{p_{i}^{x}-1}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4807,7 +4821,7 @@ status open
 
 .
  
-\begin_inset Formula $\phi(n)=|\{m\in{\mathbb{N}},m\le n,\gcd(m,n)=1\}|$
+\begin_inset Formula $\varphi(n)=|\{m\in{\mathbb{N}},m\le n,\gcd(m,n)=1\}|$
 \end_inset
 
 .
@@ -4816,7 +4830,7 @@ status open
 \end_inset
 
  
-\begin_inset Formula $\phi(mn)=\frac{\phi(m)\phi(n)\gcd(m,n)}{\phi(\gcd(m,n))}$
+\begin_inset Formula $\varphi(mn)=\frac{\varphi(m)\varphi(n)\gcd(m,n)}{\varphi(\gcd(m,n))}$
 \end_inset
 
 .
@@ -4825,7 +4839,7 @@ status open
 \end_inset
 
 
-\begin_inset Formula $\phi(p^{a})=p^{a-1}(p-1)$
+\begin_inset Formula $\varphi(p^{a})=p^{a-1}(p-1)$
 \end_inset
 
 .
@@ -4834,7 +4848,7 @@ status open
 \end_inset
 
 
-\begin_inset Formula $\sum_{d|n}\phi(d)=\sum_{d|n}\phi(\frac{n}{d})=n$
+\begin_inset Formula $\sum_{d|n}\varphi(d)=\sum_{d|n}\varphi(\frac{n}{d})=n$
 \end_inset
 
 .
@@ -4866,7 +4880,7 @@ status open
 
 .
  
-\begin_inset Formula $a^{\phi(n)}\equiv1\pmod{n}$
+\begin_inset Formula $a^{\varphi(n)}\equiv1\pmod{n}$
 \end_inset
 
 , if 
@@ -4993,7 +5007,7 @@ status open
 \end_inset
 
 
-\begin_inset Formula $\phi(n)=\sum_{d|n}\mu(d)\frac{n}{d}$
+\begin_inset Formula $\varphi(n)=\sum_{d|n}\mu(d)\frac{n}{d}$
 \end_inset
 
 .
@@ -5006,7 +5020,6 @@ status open
 \end_inset
 
 .
- 
 \begin_inset Newline newline
 \end_inset
 
@@ -5027,7 +5040,7 @@ status open
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -5040,7 +5053,7 @@ Topic{
 
 Legendre symbol
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -5096,9 +5109,9 @@ status collapsed
 \begin_inset Newline newline
 \end_inset
 
- 
+
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -5111,7 +5124,7 @@ Topic{
 
 Jacobi symbol
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -5134,7 +5147,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -5147,7 +5160,7 @@ Topic{
 
 Primitive roots
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -5174,7 +5187,7 @@ status collapsed
 \end_inset
 
 ) is 
-\begin_inset Formula $\phi(m)$
+\begin_inset Formula $\varphi(m)$
 \end_inset
 
 , then 
@@ -5187,7 +5200,7 @@ status collapsed
 \end_inset
 
  has a primitive root, then it has 
-\begin_inset Formula $\phi(\phi(m))$
+\begin_inset Formula $\varphi(\varphi(m))$
 \end_inset
 
  distinct primitive roots.
@@ -5241,7 +5254,7 @@ status collapsed
 \end_inset
 
  modulo 
-\begin_inset Formula $\phi(m)$
+\begin_inset Formula $\varphi(m)$
 \end_inset
 
 , such that 
@@ -5320,7 +5333,7 @@ If
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -5333,7 +5346,7 @@ Topic{
 
 Discrete logarithm problem
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -5439,7 +5452,7 @@ status open
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -5452,7 +5465,7 @@ Topic{
 
 Postage stamps/McNuggets problem
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
