@@ -3402,7 +3402,7 @@ Topic{
 
 Bell numbers
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3447,7 +3447,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3460,7 +3460,7 @@ Topic{
 
 Eulerian numbers
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -4826,6 +4826,10 @@ status open
 
 .
  
+\begin_inset Formula $\quad\varphi(n)=n\cdot\prod_{p|n}\left(1-\frac{1}{p}\right)$
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
